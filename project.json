@@ -8,6 +8,7 @@
     "UiPath.Excel.Activities": "[2.23.2-preview]",
     "UiPath.Mail.Activities": "[1.22.1]",
     "UiPath.Presentations.Activities": "[1.12.2]",
+    "UiPath.Python.Activities": "[1.8.1]",
     "UiPath.System.Activities": "[24.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[24.2.0-preview]",
     "UiPath.Word.Activities": "[1.19.1-preview]"
@@ -50,6 +51,14 @@
     "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "b8df19f6-5d02-4fed-a34f-cc73239a0687",
+      "input": [],
+      "output": []
+    }
+  ],
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},

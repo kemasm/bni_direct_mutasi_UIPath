@@ -1,0 +1,13 @@
+﻿{
+  "Name": "link_unduhLaporan",
+  "Type": "Element",
+  "TaxonomyType": "Link",
+  "Id": "0uE9HmV4CkCdSXLWZD1H3w",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/0uE9HmV4CkCdSXLWZD1H3w",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-18T08:38:48.7377054Z",
+  "Updated": "2024-04-18T08:38:48.7377054Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

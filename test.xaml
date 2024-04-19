@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,1159" sap2010:WorkflowViewState.IdRef="test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="778,5280" sap2010:WorkflowViewState.IdRef="test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -37,129 +37,1054 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>UiPath.Activities.System.Encode</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Activities.System.Compression.Workflow</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Platform</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.Xml</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>UiPath.Presentations.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.Collections</AssemblyReference>
-      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
-      <AssemblyReference>UiPath.Presentations.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="704,1094" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="654,5215" sap2010:WorkflowViewState.IdRef="Sequence_41">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_inputTable" />
+      <Variable x:TypeArguments="x:String" Name="str_outputDirPath" />
+      <Variable x:TypeArguments="x:String" Name="str_outputFilePath" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_OutputFile" />
+      <Variable x:TypeArguments="x:String" Name="str_inputFilePath" />
+      <Variable x:TypeArguments="x:String" Name="str_fileName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_SucceedRows" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_UnprocessedRows" />
+      <Variable x:TypeArguments="ui:UiElement" Name="webpage" />
+      <Variable x:TypeArguments="x:String" Name="str_currentRow" />
+      <Variable x:TypeArguments="x:Int32" Name="int_index" />
+      <Variable x:TypeArguments="x:String" Name="str_bccList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="642,1006" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,896" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Preprocess" sap:VirtualizedContainerService.HintSize="654,3160" sap2010:WorkflowViewState.IdRef="Sequence_115">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;sequence_preprocess: start&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <Assign DisplayName="Assign Output Dir Path" sap:VirtualizedContainerService.HintSize="592,123" sap2010:WorkflowViewState.IdRef="Assign_11">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_outputDirPath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">[Path.Join(
+	"C:\Users\maKse\Documents\Sansatech\sample_data\mutasi\output", 
+	Datetime.Now.ToString("yyMMdd")
+)]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:CreateDirectory Output="{x:Null}" ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="592,120" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[str_outputDirPath]" />
+      <Assign DisplayName="Assign Output File Path" sap:VirtualizedContainerService.HintSize="592,123" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_outputFilePath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">[Path.Join(
+	str_outputDirPath,
+	"output.xlsx"
+)]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Sequence DisplayName="Create/Read Output Data Table" sap:VirtualizedContainerService.HintSize="592,2539" sap2010:WorkflowViewState.IdRef="Sequence_70">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[not(Len(Dir(str_outputFilePath)) = 0)]" sap:VirtualizedContainerService.HintSize="530,1371" sap2010:WorkflowViewState.IdRef="If_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,196" sap2010:WorkflowViewState.IdRef="Sequence_66">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_OutputFIle]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="354,111" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[str_outputFilePath]" />
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,997" sap2010:WorkflowViewState.IdRef="Sequence_69">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_inputFilePath]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[Path.Join(
+	"C:\Users\maKse\Documents\Sansatech\sample_data\mutasi\input", 
+	"input.test.xlsx"
+)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_OutputFIle]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="434,128" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet1" WorkbookPath="[str_inputFilePath]" />
+              <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[DT_OutputFIle]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,226" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataColumn>
+              <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Detail" DataTable="[DT_OutputFIle]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,226" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataColumn>
+              <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Mail Sent" DataTable="[DT_OutputFIle]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,209" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataColumn>
+            </Sequence>
+          </If.Else>
+        </If>
+        <Sequence DisplayName="Add Additional Columns" sap:VirtualizedContainerService.HintSize="530,563" sap2010:WorkflowViewState.IdRef="Sequence_67">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="File Type" DataTable="[DT_OutputFIle]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="388,226" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="546,811" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" UseTemplate="True" WorkbookPath="C:\Users\maKse\Documents\Sansatech\sample_data\mutasi\input\input.test.xls">
-              <ueab:ExcelApplicationCard.Body>
-                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="excel_inputFIle" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,496" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="450,411" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[excel_inputFIle.Sheet(&quot;input.test&quot;)]" SaveAfterEachRow="False">
-                      <ueab:ExcelForEachRowX.Body>
-                        <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
-                          <ActivityAction.Argument1>
-                            <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
-                          </ActivityAction.Argument1>
-                          <ActivityAction.Argument2>
-                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-                          </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          </ui:AddDataColumn>
+          <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="File Path" DataTable="[DT_OutputFIle]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="388,209" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddDataColumn>
+        </Sequence>
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_OutputFIle]" DisplayName="Generate Additional Info" sap:VirtualizedContainerService.HintSize="530,92" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,532" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="File Type" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_16" Row="[CurrentRow]" Value="[If(CurrentRow.item(&quot;isPDF&quot;).ToString.Contains(&quot;1&quot;), &quot;PDF&quot;, &quot;Excel&quot;)]" />
+                <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="File Path" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,215" sap2010:WorkflowViewState.IdRef="UpdateRowItem_17" Row="[CurrentRow]" Value="[Path.Join(&#xA;&#x9;str_outputDirPath,&#xA;&#x9;CurrentRow.Item(&quot;No Rekening&quot;).ToString + &#xA;&#x9;&#x9;If(CurrentRow.item(&quot;isPDF&quot;).ToString.Contains(&quot;1&quot;), &quot;_PDF&quot;, &quot;_Excel&quot;) +&#xA;&#x9;&#x9;&quot;.zip&quot;&#xA;)]" />
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEachRow>
+        <ui:FilterDataTable DataTable="[DT_OutputFile]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="530,201" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_SucceedRows]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">["Sukses"]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:FilterDataTable>
+        <ui:FilterDataTable DataTable="[DT_OutputFile]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="530,184" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DT_UnprocessedRows]" SelectColumnsMode="Remove">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">["Sukses"]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:FilterDataTable>
+      </Sequence>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,75" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;sequence_preprocess: success&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+    </Sequence>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Login.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="ui:UiElement" x:Key="Output_Element">[webpage]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,181" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;traverse_unprocessed_rows: start&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[int_index]" DataTable="[DT_UnprocessedRows]" DisplayName="For Each Unprocessed Rows" sap:VirtualizedContainerService.HintSize="592,1988" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="558,1784" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_emailBody" />
+              <Variable x:TypeArguments="x:String" Name="str_attachmentFilePath" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,181" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;[&quot;+(int_index + 1).ToString+&quot;/&quot;+DT_UnprocessedRows.Rows.Count.ToString+&quot;] Process: &quot; + String.Join(&quot;|&quot;, CurrentRow.ItemArray)]" />
+            <Sequence DisplayName="Add FIle to Download List" sap:VirtualizedContainerService.HintSize="496,121" sap2010:WorkflowViewState.IdRef="Sequence_125">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Mutasi Rekening Screen" sap:VirtualizedContainerService.HintSize="652,1616" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[webpage]" OpenMode="Never" OutUiElement="[webpage]" ScopeGuid="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V2">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,1456" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence sap:VirtualizedContainerService.HintSize="556,1369" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="494,92" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Mutasi Rekening'" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="MD1PrXGj3UWMIJ65uvY9bw" CvTextArea="453, 515, 121, 17" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="454, 514, 119, 17" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item active' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="13f16bae-e151-4064-b7ff-66d50c1659f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAVCAYAAABmOZFVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUXSURBVGhD7ZhZbJVFFMdBUdxwiRtgxD2KuwQQEEmMmhCjPvjiixp8MQKKWpVF2fHuF7pZWmhLW0yICYkRMSx1ayQQI2oUMY0PxpgYXzTRRH3wxeH85nq+zjf9vt7ecjGU+z380/vNnDkz5/zPnHOmY/79vsckqA0kZNcQErJrCAnZNYSE7BpCiOzH6zeZya9kzMP5jSEhF+t6ms1ldRlzy+u5yPk4jHn2DYuouZGCs9yXKti/UfPYo/u6OGNRyhR2vBm5Jg7Ye/3yrDl6qCNyvlooZ9PxYBDZ6pCDfe0hQfDrN13WUWNl/mQguxywZ876gtn5flsw9stX2+zZp7yaMR3vbA7JD4X/i+wTiUFkXylOuOSltLlHnOTOgWdaGsy1y7Lm/CXpUUs2IJCvETsqseGUJBvn3PRazsJ1EkZe9GLaXPhC2lwnRquj4tKOOmfXnraAaIWu7f+s00xfkw/GyRgPpIs2gzD/T3+3eaqp3py+cGAtZeajD7fa+XIpL47sv7/rDvTpGGn9rOdSwfj4xamQXp9szsjFmPRyxhz+tJQFh6PjZsGa7iY7p3LYjK3I+Dbpmicbw35Y3NoQ6GUtOsctGpi/fWXO3LgiGzpzJNmpt5qtU69emg0OMT9bNLeKgg3bm60CJcw/nMJ3jh7ClWFNXXuj+emLbfZ7VVeTuUHWaM+wrLPJ3L02b5bLX75JwU831weGxu2tGO7NRt8dq3JmyZZGGwiA31Ml4J9o3GRlXHuU6IlCdN/HpcAbro4L5LLMFJtad7ZY37LmCvF1w9stVsa3CcIIINYS5Ox9sVw69PR+sMXKoP9y6aPmbSjYffHnXPlNQDE+JNk4h993rc7bQ6D0qqWlpoyF1SI7CiqHIzjDrHV5s+O91kjZuL0VUWT/8W2XuU2CVmv2j4c7rcMhwF0LGEMWG9SeA59stUTTpO7ZX3J2JTrIBEos4AwzRIaz8u3bpP5QYgEXZLb4BRn2niBlldL6+5FSRgTaX3Hby5KNEtI29ZvohGw2rCbZRCpO1zkOp79Z9/XBDnsDMeTBTNHs3tdmI1fXx+2twB7V5+JMifjt75YCiECKknGBP7CHs+APbsyjhYEXSyU6XJ8AxvF5ObJV3pdhPQH1WHHwC2oQB+6kfxOIIGr0Oc+nbBpnrFpkEzikIvQf+U/mh887AznXIb9JlEIOKY3UOdI0jk6IIi1qXwBR1De1Lw7Yc5rUzHPFF9xUt6epRMdJSzZpgVt1nhioC/jrkk0amibp3t0sMoV4h/aNUqic6xAXOJSmjmCJ06Hw7QH0BRCl5yWDcU7OqwEAsP2Q1HYNROylh3HrJuB3JTqqTXZcGqcMcplc7oYkOwo+2XyroTRQ4F5pDigBRBypGDk9NPN/SSreK/WO0sBtZYxayv7cHg2Sh3JFW7Opk+ig8cAw8LOs8R3jI8oenABpZAitg6znG5v0LNjAMzMtzSoyPlHoJGj0iToSHarneMjmmyfxpVJe7pS+gb3BI9Lkni0ZbFgNmjvugoUu2YCGQ+stzwMaDp4K/NUDLZAuWg9OxH15oD20DlC/cR5PDRykTzOeZCpDY7Rrb+l8vtE+4uyBZIhxXxubpTsmRes+3Ait6yCKKPQzrvuPREc1yNYx9znHy4mXjbtfiOwEoxMErAatO8ZFApreE7JHOf482m1LIVlxX2+pLFFC6G14v+sbHyRknwKgRt+fLobKHfWa/6q5Nz4hu4aQkF0z6DHHAOFu/SxHH3OkAAAAAElFTkSuQmCC" InformativeScreenshot="d18114e2b332756d1aa86166d0869c3e.png" Reference="k3sD638TWkKWXUr3w00gUg/tD9ZP7NvjUScNw0Php8AmA" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,469" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Informasi Rekening'" sap:VirtualizedContainerService.HintSize="388,197" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="f0oqphSlS0Cmw4grljZxAA" CvTextArea="445, 434, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="438, 434, 121, 15" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" Guid="7d6fdbfc-6f50-4e31-a236-11a7685f3baa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAATCAYAAAC9fgIPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOrSURBVGhD7ZbJThtBEIbz/jdeIcolp0goSi4gIhKxBRKzm83sGDDgfTfuzFdRjYpmxvLgQBCew6/p7upa/+7qeTf5fsKlGC+kpI8hUtLHECnpY4hnI31r5Yfrdtqu0265s1w2cs//RP7kwOWymUjZKKgUb9zG8myk7KlYW5xxxcJlpOwpSER6u9WIXI9CrVx0e+s/ZTwz+eGR/DWj3+/LgVX0uh13sr8VudfHc5D+r/FspCfZ+9rgx86hbTXr7mDr14P1KLxp0klu+/ecK91eSwvv9brueHdDZPVqObwtjFnjpnBjWGs16qJrbdEVGrWKtDGKxho6nVZTbBfyp1L8crAuty9Y4wlBf2X2q6tVin/jCHzcFfKh7dWFafGnt/b64ljW+Wq8PqIOLLHcXl3IWGwGh0BtXp7mwn0+6fgp5E+G0ourp9ZD7RELX913dX4U2qEW+NBaU1fVVYxEejsgBCfMIcDK7Zjgaffa5tHpBkFpcbDF4Via+Sxz1knm/GhX5uh1ggQqpdvQ3+HOmthkTGK6DrB3cbwn42a9Gh4OsL+5IvaeSjoxErv1B6laeHxrXqzpQRlGL66ePunY0UuDXWpFTsDKdL+fz0ik57Yf/ghxsnRs9zLOzE2Fc8DPXfHmSsbY0vcfkGSzUQvnuufscCeck6CfjII2rEXiYOysLj7ak4T0718+yu3JZubdzeXZgzgUqoNf4ofM8l0hlA+jF1dPn3TbIUCtUpI95EOnsDJgeQEjkY6jOLkd04Z0rLCJ+LasTMHcJ0l9rC99k6eBOb54AlQfwugYkF8NkM0syPog0vv9e+kQQNpxcHvoEMiwy5OjcoXmiByy6Vw2h2H04upp6xEVt+oiA1YGLBfgZUgPTpq2boV/060tm6SCeRzp2Ldtk5vt6wO6Q7V05/Y2lgeSbmOfn/okpGunQi/qxirwq284+amPYfTi6mnrERW36rIeddM5bHb+IqSTLPspOnMIopCq79uySSqYDyKdG63rFF39ccvVL4B02v+wpAMOETeeMYfXvr0AH/r/YXPBL3roJNFTaBy2HoNIxx91tU8lteen2u5/EdKB/XsneRuYb8smaffEkc5bqLb5FzjMrrr7+57I8Is/ZPbPPgnpgIOEDmP/L1zXgZ8LP2S0cQhJogc0DluPQaQz5lDhg1x5Ovjh9fNJRHqK1w/b1RQcMDtPSX9DyMxPy/NlnzqeD+0SipT0NwaeTdq6PiH82Pm3PyV9DJGSPnaYcH8AxVFIV0p0wI0AAAAASUVORK5CYII=" InformativeScreenshot="0820eb1fc2440c24e951dceab474060a.png" Reference="k3sD638TWkKWXUr3w00gUg/HA46JVV2fEyAu0oGwWxBcQ" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Mutasi Rekening'" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="MD1PrXGj3UWMIJ65uvY9bw" CvTextArea="453, 515, 121, 17" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="454, 514, 119, 17" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item active' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="13f16bae-e151-4064-b7ff-66d50c1659f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAVCAYAAABmOZFVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUXSURBVGhD7ZhZbJVFFMdBUdxwiRtgxD2KuwQQEEmMmhCjPvjiixp8MQKKWpVF2fHuF7pZWmhLW0yICYkRMSx1ayQQI2oUMY0PxpgYXzTRRH3wxeH85nq+zjf9vt7ecjGU+z380/vNnDkz5/zPnHOmY/79vsckqA0kZNcQErJrCAnZNYSE7BpCiOzH6zeZya9kzMP5jSEhF+t6ms1ldRlzy+u5yPk4jHn2DYuouZGCs9yXKti/UfPYo/u6OGNRyhR2vBm5Jg7Ye/3yrDl6qCNyvlooZ9PxYBDZ6pCDfe0hQfDrN13WUWNl/mQguxywZ876gtn5flsw9stX2+zZp7yaMR3vbA7JD4X/i+wTiUFkXylOuOSltLlHnOTOgWdaGsy1y7Lm/CXpUUs2IJCvETsqseGUJBvn3PRazsJ1EkZe9GLaXPhC2lwnRquj4tKOOmfXnraAaIWu7f+s00xfkw/GyRgPpIs2gzD/T3+3eaqp3py+cGAtZeajD7fa+XIpL47sv7/rDvTpGGn9rOdSwfj4xamQXp9szsjFmPRyxhz+tJQFh6PjZsGa7iY7p3LYjK3I+Dbpmicbw35Y3NoQ6GUtOsctGpi/fWXO3LgiGzpzJNmpt5qtU69emg0OMT9bNLeKgg3bm60CJcw/nMJ3jh7ClWFNXXuj+emLbfZ7VVeTuUHWaM+wrLPJ3L02b5bLX75JwU831weGxu2tGO7NRt8dq3JmyZZGGwiA31Ml4J9o3GRlXHuU6IlCdN/HpcAbro4L5LLMFJtad7ZY37LmCvF1w9stVsa3CcIIINYS5Ox9sVw69PR+sMXKoP9y6aPmbSjYffHnXPlNQDE+JNk4h993rc7bQ6D0qqWlpoyF1SI7CiqHIzjDrHV5s+O91kjZuL0VUWT/8W2XuU2CVmv2j4c7rcMhwF0LGEMWG9SeA59stUTTpO7ZX3J2JTrIBEos4AwzRIaz8u3bpP5QYgEXZLb4BRn2niBlldL6+5FSRgTaX3Hby5KNEtI29ZvohGw2rCbZRCpO1zkOp79Z9/XBDnsDMeTBTNHs3tdmI1fXx+2twB7V5+JMifjt75YCiECKknGBP7CHs+APbsyjhYEXSyU6XJ8AxvF5ObJV3pdhPQH1WHHwC2oQB+6kfxOIIGr0Oc+nbBpnrFpkEzikIvQf+U/mh887AznXIb9JlEIOKY3UOdI0jk6IIi1qXwBR1De1Lw7Yc5rUzHPFF9xUt6epRMdJSzZpgVt1nhioC/jrkk0amibp3t0sMoV4h/aNUqic6xAXOJSmjmCJ06Hw7QH0BRCl5yWDcU7OqwEAsP2Q1HYNROylh3HrJuB3JTqqTXZcGqcMcplc7oYkOwo+2XyroTRQ4F5pDigBRBypGDk9NPN/SSreK/WO0sBtZYxayv7cHg2Sh3JFW7Opk+ig8cAw8LOs8R3jI8oenABpZAitg6znG5v0LNjAMzMtzSoyPlHoJGj0iToSHarneMjmmyfxpVJe7pS+gb3BI9Lkni0ZbFgNmjvugoUu2YCGQ+stzwMaDp4K/NUDLZAuWg9OxH15oD20DlC/cR5PDRykTzOeZCpDY7Rrb+l8vtE+4uyBZIhxXxubpTsmRes+3Ait6yCKKPQzrvuPREc1yNYx9znHy4mXjbtfiOwEoxMErAatO8ZFApreE7JHOf482m1LIVlxX2+pLFFC6G14v+sbHyRknwKgRt+fLobKHfWa/6q5Nz4hu4aQkF0z6DHHAOFu/SxHH3OkAAAAAElFTkSuQmCC" InformativeScreenshot="d18114e2b332756d1aa86166d0869c3e.png" Reference="k3sD638TWkKWXUr3w00gUg/tD9ZP7NvjUScNw0Php8AmA" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="MD1PrXGj3UWMIJ65uvY9bw" CvTextArea="453, 515, 121, 17" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="454, 514, 119, 17" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item active' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="13f16bae-e151-4064-b7ff-66d50c1659f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAVCAYAAABmOZFVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUXSURBVGhD7ZhZbJVFFMdBUdxwiRtgxD2KuwQQEEmMmhCjPvjiixp8MQKKWpVF2fHuF7pZWmhLW0yICYkRMSx1ayQQI2oUMY0PxpgYXzTRRH3wxeH85nq+zjf9vt7ecjGU+z380/vNnDkz5/zPnHOmY/79vsckqA0kZNcQErJrCAnZNYSE7BpCiOzH6zeZya9kzMP5jSEhF+t6ms1ldRlzy+u5yPk4jHn2DYuouZGCs9yXKti/UfPYo/u6OGNRyhR2vBm5Jg7Ye/3yrDl6qCNyvlooZ9PxYBDZ6pCDfe0hQfDrN13WUWNl/mQguxywZ876gtn5flsw9stX2+zZp7yaMR3vbA7JD4X/i+wTiUFkXylOuOSltLlHnOTOgWdaGsy1y7Lm/CXpUUs2IJCvETsqseGUJBvn3PRazsJ1EkZe9GLaXPhC2lwnRquj4tKOOmfXnraAaIWu7f+s00xfkw/GyRgPpIs2gzD/T3+3eaqp3py+cGAtZeajD7fa+XIpL47sv7/rDvTpGGn9rOdSwfj4xamQXp9szsjFmPRyxhz+tJQFh6PjZsGa7iY7p3LYjK3I+Dbpmicbw35Y3NoQ6GUtOsctGpi/fWXO3LgiGzpzJNmpt5qtU69emg0OMT9bNLeKgg3bm60CJcw/nMJ3jh7ClWFNXXuj+emLbfZ7VVeTuUHWaM+wrLPJ3L02b5bLX75JwU831weGxu2tGO7NRt8dq3JmyZZGGwiA31Ml4J9o3GRlXHuU6IlCdN/HpcAbro4L5LLMFJtad7ZY37LmCvF1w9stVsa3CcIIINYS5Ox9sVw69PR+sMXKoP9y6aPmbSjYffHnXPlNQDE+JNk4h993rc7bQ6D0qqWlpoyF1SI7CiqHIzjDrHV5s+O91kjZuL0VUWT/8W2XuU2CVmv2j4c7rcMhwF0LGEMWG9SeA59stUTTpO7ZX3J2JTrIBEos4AwzRIaz8u3bpP5QYgEXZLb4BRn2niBlldL6+5FSRgTaX3Hby5KNEtI29ZvohGw2rCbZRCpO1zkOp79Z9/XBDnsDMeTBTNHs3tdmI1fXx+2twB7V5+JMifjt75YCiECKknGBP7CHs+APbsyjhYEXSyU6XJ8AxvF5ObJV3pdhPQH1WHHwC2oQB+6kfxOIIGr0Oc+nbBpnrFpkEzikIvQf+U/mh887AznXIb9JlEIOKY3UOdI0jk6IIi1qXwBR1De1Lw7Yc5rUzHPFF9xUt6epRMdJSzZpgVt1nhioC/jrkk0amibp3t0sMoV4h/aNUqic6xAXOJSmjmCJ06Hw7QH0BRCl5yWDcU7OqwEAsP2Q1HYNROylh3HrJuB3JTqqTXZcGqcMcplc7oYkOwo+2XyroTRQ4F5pDigBRBypGDk9NPN/SSreK/WO0sBtZYxayv7cHg2Sh3JFW7Opk+ig8cAw8LOs8R3jI8oenABpZAitg6znG5v0LNjAMzMtzSoyPlHoJGj0iToSHarneMjmmyfxpVJe7pS+gb3BI9Lkni0ZbFgNmjvugoUu2YCGQ+stzwMaDp4K/NUDLZAuWg9OxH15oD20DlC/cR5PDRykTzOeZCpDY7Rrb+l8vtE+4uyBZIhxXxubpTsmRes+3Ait6yCKKPQzrvuPREc1yNYx9znHy4mXjbtfiOwEoxMErAatO8ZFApreE7JHOf482m1LIVlxX2+pLFFC6G14v+sbHyRknwKgRt+fLobKHfWa/6q5Nz4hu4aQkF0z6DHHAOFu/SxHH3OkAAAAAElFTkSuQmCC" InformativeScreenshot="d18114e2b332756d1aa86166d0869c3e.png" Reference="k3sD638TWkKWXUr3w00gUg/tD9ZP7NvjUScNw0Php8AmA" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type No Rekening" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="494,92" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Text="[CurrentRow.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" ContentHash="q1F0D9ZRCkqxTSDxixQ2rQ" CvElementArea="1054, 545, 206, 35" CvType="InputBox" DesignTimeRectangle="1057, 547, 201, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' class='picklist-form-control' aaname='' /&gt;" Guid="007b6c4b-c74d-43b0-bf4a-30db54da03c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAkCAYAAAAq974jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJKSURBVHhe7d29bhNBGIVh7oU74EoQHQ0dVQSiJ3I6OhroLIWKFNBTUNEjcQEUtDSWEAE2gKIw5B3vbmbtmfVOae/7SCvlT0lzjuz5ZnZzK0iqYmmkStWlufz4Ply8WoSfx/fC+cM74fv9215ee3WRW/JLjslzrUml+dech99vnsc/9uvZg/Dn3Wm4/PwpXP341v6EtD/ILfklx+SZXJNvcj7FztL8/fA2/tKL00W4+vql/ap0OMg1+Sbn5H2X0dLEt2FP78ZWSoeOnJN3cj+mWJrm5ZPQvHjcfibNB7kn/yXZ0tA0C6M5I/+lV5yt0vCejpcoae7oQW6NMygN0wMWQ65hpPUahz5sTtUGpWHsxhRB0hp9oBepQWlolWNl6QZ9oBepvjTsjLLRI2mIXqQnB/rSMClgh1TSEL1IJ2l9aTiL4wBA2hY3Pa/70elLE9czniWTttCLdF3Tl4bTn5Ly0n5YGmkCSyNVsjRSpWxpHARIecVBgCNnKa84cnZzU8orbm56jEbKKx6jQVzXeGBT6o0e2IS3BkhDO28N8CY06QY9oA+jN6HB252ltUm3O3eYFPhgDc1Z1YM1Oj7CSXNF7qsf4dShabxEucbRHMRNzOu8l15hOqOlAe/pWAwxRXAcrUNErsk3Oc+tYTbtLA2YHjB245ey0cMOKa30rJr2Ebklv+SYPJNr8r05JSuZVJoUO6Pxbdux/2rDaz8vckt+yXG60z9VdWlSq9Wq/Uiaj+rSNE0TlstleHR0FK+TxUl4fXbWflc6dCH8BwHOMH5tjk+3AAAAAElFTkSuQmCC" InformativeScreenshot="456198b656be5f8702287a2f504e8f14.png" Reference="k3sD638TWkKWXUr3w00gUg/-DSF8oEzZEOehgJFv2bK5g" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="748, 550, 86, 16" CvTextArgument="No. Rekening" CvType="Text" DesignTimeRectangle="749, 550, 84, 15" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl idx='3' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl type='' tag='B' class='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                    No. Rekening' check:innerText='No. Rekening' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFgAAAATCAYAAAAUCsqbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO8SURBVFhH7ZY5SKtBEMcDioIHHiCionjhfSLetygI4oF4IIqKYGlhqYWNhY2ViPYWYmFhLwgWNjY2FhaCaGVjYSGCzTx+Y/Zj8yV5yXsmhfD9YUl2Z3Z25r8zs59PPMQVHsFxhkdwnOERHGf8OoL39vZkeXlZLi4u/Cuxw+bmpqytrcnj46N/5ecIILi5uVlKS0tDOo+M8VNgIzk5WRITE52RmZmpxEWDeBIcDwQRTMC5ubny9vbmX/1GLAl224Gwjo4OOT4+9q+Ex68nmAyuqKiQtrY2+fr68kuCiSFQMo8LSUlJkb6+Pnl9ffVLwyMUwff39zI4OCiTk5M6Pz8/l5ycHLWdlJSk/tzd3anMTTC/7F1aWlJ/bb+olNbWVscv9o2Pj8vMzIzqJCQkSFZWlmML+dTUlDw8PKidxcVFHfiCbnp6uuzv76suODg40DVkaWlpMjExoW2GvQZBBDNQ4JcDDWxikA8MDMjW1pbOCT4vL0+Kiork/f1d18LBtmNgE3xyciI9PT0OYZ+fn9LV1SUtLS1O4IZgRm9vr8zNzaku/nDRu7u7ahdia2trpb6+Xv1iH4Syhoxzq6urHX/cBHMJxEV8VDSVzZyzqDaqzviJveHhYamqqopMMOAw/htlI8MYh5iDDHZ2dmRsbCximdtnAGzgJESdnp5KZWWllJeXB1zU7e2tkrixseEQvL29rcRx0dhAn33st8GFra6uql/sg4TLy0u/VKSkpEQHcBNMRpKlBiTA0NCQyomhrq5OXl5e/NLvs/AzKoJxmjZBeZIpRobx0dFRmZ2dVT0DdHDQNh4K2KCcyCRTyszPzs5U7vP5dCA3A738/Hyn/LBRUFAg2dnZ0t3drb7iF63KlL0ZGRkZUlxcLEdHRwEEGpi4gJtg5qZ9AFtu/LQRioOwBAPKorCwULPVlJLJFIiPRQa3t7er7aurK50ja2xsDNtqDMFk/eHhoQbMGr7gkzuDbcSSYPa4M5i3g54dNcGAPgXBPDZG5u51P+nB5hLNXgKyHy168MrKipbe8/NzUOCULfr4iWxkZCSgB09PT8v8/Lx8fHzElGASqampSe3jJ3HQk6mWfyIYcAhfF7YMI/ZrzSP09PSkMjKZEQqhzuDm+/v7NQAzt78iysrK5ObmRmXuwAmMrKUKuIy/+WUTZGD7Y8sjEQzsr4jU1FTp7OyUhYWF8AR7iB5krd0iQcRHzkP04MGFzOvra51TSQ0NDVJTUxNQIR7B/wmyd319Xb+AQrUyA4/gOMMjOK4Q+QMM3LMl0pA8DAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NTypeInto>
+                        <uix:NSelectItem DisplayName="Select Format File" sap:VirtualizedContainerService.HintSize="494,92" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[CurrentRow.Item(&quot;File Type&quot;).ToString]" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                          <uix:NSelectItem.Items>
+                            <scg:List x:TypeArguments="x:String" Capacity="7">
+                              <x:String></x:String>
+                              <x:String>PDF</x:String>
+                              <x:String>Excel</x:String>
+                              <x:String>MT940</x:String>
+                              <x:String>MT942</x:String>
+                              <x:String>Text Standard</x:String>
+                              <x:String>CSV</x:String>
+                            </scg:List>
+                          </uix:NSelectItem.Items>
+                          <uix:NSelectItem.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" ContentHash="u4JEjL7KjkuYqX7HdMdYyg" CvElementArea="1055, 752, 180, 35" CvType="InputBox" DesignTimeRectangle="1057, 754, 175, 31" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='customFile' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='customFile' tag='SELECT' type='' class='custom-select custom-select-sm' aaname='' /&gt;" Guid="686e17a5-23cb-47e8-9bf6-03a37f25ab43" InformativeScreenshot="d2dc9996506ace8911bba28e267734f1.png" Reference="k3sD638TWkKWXUr3w00gUg/ZHO3uUeJQECFfS9rvzw2zQ" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="715, 756, 74, 13" CvTextArgument="Format File" CvType="Text" DesignTimeRectangle="716, 756, 72, 15" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl idx='4' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl type='' tag='B' class='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                    Format File' check:innerText='Format File' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAATCAYAAAA6T+sJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMSSURBVFhH7Va/S7JRFJaSFA36IWo/KNCCpMxqjEKqJSPQCGkpGspVsX/ARcSlyaGthpBoaBCcWoIEF5fWBkFoamlwElzOx3N8r9xXTd+XL77vg+994PByz7mee85zzj1XExnQBYMwnTAI0wmDMJ34rwi7ubmheDxOz8/P9P7+TkdHR3R+fq5YtUFF2MbGBlksFjKbzSqZn5+narWq7Pp7KBQKnGA2m1U0asA+OjpKw8PDqvjHxsbo6upK2dXCjxEG+VehhbB+dhl/hLCnpydyOp1cNXTi2toavb29sQ1Bnp6eUjAYpNnZWTo8PGzrDg4OaGJigivvcDg4sdXVVRoZGWE/Ozs71Gw2WTKZDJ8hbOvr6/T19cXXCD6GhobYj9fr5XNlDCIMetixrxdhtVqNAoFA+5Yh1lwup1hb0EwYDtnc3KTj42NO7PPzk+bm5mhmZoYPRzDT09O0vLzMBwPQuVwuWlxcZF2lUqGlpSXWJZNJ9hOLxWh3d5ceHh6YmGKxSK+vr/x7nIl4QqFQe92PkN8hDGcjHwhyA9LpNBf7+vqa10AXYZgBqKQQ6EqlEn/9fj99fHwou4mT3N/f50GKYKLRKN3e3irWVoDhcFhVJZPJxFKv13mNrkUXfpckqgwBtBA2NTVFVqu1HT+KeHl5yfZ+hKVSKV7f39/zWgB5QwQ0d5jP52ORIR8qByPQSycIE5BJaDQalEgkaHJykq/F+Pg42e128ng8XXt7YZBdjqeTMHxBMM4TZENsNpsqb82E4SotLCxw6wp0dpgIRqCXrh9h8IPr9/j4yDYQiK7GvAMGETLILsfTSRhsJycnXR3WCc2EwdH29jadnZ19O8NEMAK9dP0Iw9XBYyFmGB4UMfwB7MX1xWwRj4QM2VcvyPEg5r29PYpEImxDI6A4Kysr7RmG8XJxcUF3d3e8BjQTBsivJBJBx5XLZbb9BGEIGq8iCIJ/t9vNLzEKJf5s4prilUSx8vm84qUFPYSB7K2tLZ53mHMvLy9dryRGQ6cvFWEGBsMgTCcMwnTCIEwnDMJ0gegXaI/hGF/xgtwAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NSelectItem.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NSelectItem>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="494,92" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" ContentHash="9ajPcuZ1XUGxQsltlaKWOg" CvElementArea="1447, 879, 84, 32" CvTextArea="1469, 888, 42, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1450, 881, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="73ba1ee6-4167-463a-82f2-fd770685f494" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAAhCAYAAABHhIyzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAViSURBVGhD7ZpJbyNFFMf7q3CCj8ByRYgzJ9ZcAREGCQnNAXFBM4pAzIFNCMSNAcEglhESIsyMJ8uMx5PYcWLHe+Ilm7PZSdvZE/vN+z9TTjtdnXQSJ0TjPvxld1d1ddev33tVXa+M0kyC8ukRio09oEx8SP4Xc1FamU3S2kKGqvNpqjgIZaizWBinyWSQIuH7FPD7yHf3n2Opr6+XRoYHaCI+THPZMSrPJlzcOyN1FnDvRJCS0QClY0Pyv5iLkFlMUfWINk4j1S7uszwVo6lMWO5vlBkoDvBAE4lhKpwA6EJ+nF/GMIVDg+T339FCO0wAGhzql2eYnhglvGS3QOfzUTGEeAQG0Xh+PE/lDIGiTbQNmHj5C/wMMEQBCnCzbBWTDDPLVpZLhuQYoG2divVT5ZdPyOx5ncx3nyOz6ykyX3ni8RL6hL5xH9FX6bOVAUu9zNW5JC2xdc5lI5RPjYiHGeZcSlwWlpFlmCmmjLe8PB3fB+r/owFR9wCdIMBlBgeBwjrhITOTo8IslwqRUSmmxRoRi3BinGPpBMehRSYPs658/Z7+Jh0osLACLc3ExZsRMiEYpaGCKgYDxFAMLIgF86FbZF5+UdtwR4uZVGMDAlQNRnk2RMDEYGisssvDOlGQGn9Io6F7lB68SSvvPKNv0JPE2Gp8QEIlvBozC7j9YiFGBk7COhEDYJmw0KX3n9c35GlfbKmInxjIARQMMTsxALLA1llIhxvzwM/e0jfgyablz7sFJqBiqglvN3ACUGGys7d/0l7oyVlTvdfF7RE2MWAZs5NjMjFFgC1feVV7kSdnLX38sow/mI9i9Dcw38QEFUFWd8FFVL1S1p4/qN3IIO34ftaWtVPFYK9MoTDyy5cSpk6VG59qK59Umz9ccew4OlmbTmnL3OiiAS39eJU/1Rtfloaa/bf7S6iTgK5cfU28XICqBQT5ftVUPqncApVO9/0qv/V1k2h7k3ZH+5p1N7//kOrmMtW31vm3RFs3v2m2q7sHzrW0zffa4xhXr65I2zv3/myp3xZ1P9tc3dq30DYvdBwHaH1zjbZuXJPj9WtvSserH7wgkjKGqK7dSzwk2tmW/26A1leXWtve222p3xYxOzCEYe4D1VU8hY4DdDd0p6W8Np+X68W6cuMtZRCsDb9ugNraLhWljvVcO6RW5c7MQtd7upyBsovvpYLyX7mltRxA0GkBwrKWQapdN0Cd2raeO7WYnR1om2MohM7CzQ6eh9Wpjh7WaUcL/Q+i7qUhPJw7UHzb24CewXonOlMr5mjto5ea57ZvXZe4hviI48M6LTGU3Xv7r++aZbBuqteax/WNNdr49rL83/jyEtVm0ucOtNLzhh2orMRrKp9WAIDRGx3HSI0OW632qE6jbq2Yb4zy3M5O4G/ay8fkxaAc12IQQ1ltLtsc1FB2XkCrPIe3A431ayt7Olr4yrQDZXV0muOkYmYKpg2o5I50F3lylDXXBLUChbwckmutfnWp8YVk4WcHyvJySUerzDMQZDuwqGzN/2uBygB1BvPSx0Wlt5+WvBvWQbH8icyxYqcHCgGqZ6k2Id8W9f1GQ4G7lIgEZJODWgJtWRxxlBdTmyp90S07RJAZ7h/4V7YeIRfXWKRPta6HHipv5wiZ/t9lQwiScYlogAIPfJIhzjFg7KVSe8HcAVXqgL1Nq11Pyp4ELBrLFxBP2gEKQs4I4LBlaSQ4KDsWkfGE26sNbscD6kIy4rHgBjOTY7KjAhlV7KpA3kWV6649b+E5EPvgtnDjaNgvexNU0k2BbAJlASiynOH/C6iCiV0Vyi0uKtDIyH1xZwDDlMgKU56br8EGsawj0Aw9AspH4zirL2drAAAAAElFTkSuQmCC" InformativeScreenshot="268014fdba41f464f1ef5cbbdec82d46.png" Reference="k3sD638TWkKWXUr3w00gUg/ys7iJzeJtkCGU26Cd6x16w" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,886" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,604" sap2010:WorkflowViewState.IdRef="Sequence_116">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_18" Row="[CurrentRow]" Value="[&quot;Gagal&quot;]" />
+                              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_19" Row="[CurrentRow]" Value="[&quot;No Rekening Tidak Ditemukan&quot;]" />
+                              <ui:Continue sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=doCheckValidity&amp;day1=18&amp;mon1=4&amp;year1=2024&amp;day2=18&amp;mon2=4&amp;year2=2024&amp;accountNumber=123456789&amp;type=download&amp;trxFilter=%&amp;screen=search" ContentHash="6_NDgve7nUu1Rv3yODwvuQ" CvTextArea="915, 365, 398, 15" CvTextArgument="X Pesan Error: APR-1110063 - No Rekening Tidak Ditemukan" CvType="Text" DesignTimeRectangle="910, 365, 401, 15" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' type='' class='BNI-Message' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                Pesan Error: &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                &amp;#x9;APR-1110063 - No Rekening Tidak Ditemukan &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            &amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            ' check:innerText='Pesan Error: APR-1110063 - No Rekening Tidak Ditemukan' /&gt;" Guid="1763f8fa-8970-4572-add5-68f3edb3889f" ImageBase64="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" InformativeScreenshot="815519fd0ad245daceca1560cf8310aa.png" Reference="k3sD638TWkKWXUr3w00gUg/ojYQgHIK9U-KXsSd2gkRNA" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Firefox" ContentHash="Xb757JUDZUqtLdEGdCotOg" IconBase64="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" InformativeScreenshot="61a8d573d26f15056673d8f07a142569.png" Reference="k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg" Selector="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" Title="BNIDirect Id Pengguna : ROBOT" Url="https://bnidirect.bni.co.id/corp/common/login.do?action=login" />
+                </uix:NApplicationCard.TargetApp>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NApplicationCard>
+            </Sequence>
+            <Sequence DisplayName="Download File &amp; Delete from Download List" sap:VirtualizedContainerService.HintSize="496,121" sap2010:WorkflowViewState.IdRef="Sequence_117">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="str_docStatus" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="546,1650" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[webpage]" OpenMode="Never" OutUiElement="[webpage]" ScopeGuid="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V2">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1490" sap2010:WorkflowViewState.IdRef="Sequence_131">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NCheckState DisplayName="Check App State 'Unduh Laporan'" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_126">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[CurrentRow.Current(5)=1]" />
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh Laporan'" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="_y1Dc2sW1EmAoigYwb2Efw" CvTextArea="453, 630, 94, 16" CvTextArgument="Unduh Laporan" CvType="Text" DesignTimeRectangle="454, 630, 92, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' type='' class='menu-item' aaname='                                                     Unduh Laporan                                                 ' check:innerText='Unduh Laporan' /&gt;" Guid="51ec8167-db72-48e0-8fd3-e0e3555d064f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAATCAYAAABvLghXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMwSURBVFhH7ZbrSxRRGMb7yyIoJCm7SRlmWlai5q01tdR107VFC5M1F1stZbsJ0s2MSohuCF3AsguJ34LoS/QhiD5E0Mnfifc0M47rrFhTOR8e5px5zry35z3nzIrvMykVwD8EAviMQACfEQjgM/6IAGPJGjV5tdWVs+L9RFz1R3e5cv8rbAKU5K20kQIKc6RyoyvnBb9DAOxh1437lxAI4DMyFkCKNH27Q7VWbVJ1e9eqzrqt6tubIc3zHOrYo0K7s1Rj6TpdJBHATUhr0WX86sZRFd6fo20ko0W29YKFBHg0Etb+G0qyVVPZevXuYbfhiGHqelRzxN9+YIv6NHnK8B8e9+rc4MH984cNh8+nlyI6ru7G7Tpf3okvvvv8vF+vXahWYFEC1BZnqdG+asP3tRaaDj93vESNxMsNNzPeqR17FQDeajvenK+mRqNmLkgnAAk+u9Zm5hSfGGRelr9K3TodMnNiDJfn6O8oXkvFBi0CHO+I7+bAz/X4tPKsp8Bii7i6DuXp8UK1AosSIFaba+Mnhpt0YASLQ6vCgAC8CuC0fSdV71rodAK4gc7DPmN2l5Mf7i41NscHD9q4Ly8GdF6M4R9c+LUj3FBdtEY/09VK5jYBGvZlm7EVdBCdyNhaMIEEDucsMIDzKsB8tq3v0r0HNABF5EiI1mxWx+q3ab/Yh3eLkSMLe/h/e69rDi/fSC7y/uvrQXXxRKk+gljTM1snqaOXfGwCsJjtaH0HSEY+Smd0vh0gQdNJzuTxJ/aWSgB2zZXeSjMnnkSkwAjg1mgcm3Tn5d6KOR3u3AH4Fo4jF/FkjiCywzIWgE6PhXJtFxLd0Dx7iTkvFuGB1SiJABEBW3IHMCf5j08Shku2FS25AJzXd882mDl+KKAIwBFBoYUnR2Kk0OTJWGpAHsRkvQMkF3AmVmy7A7DFHcM4YwEAHSl/AATC9pULB3gxyphv2ZYUGJ5AZa38ISUiO3XCzOEyFaCqcLX5UxHIn0lPeIeJgSOCppCznV0oebKGpzVH51+QMzd8y5z4ZS2+8HGypUC9HGtfnADLAW53gF8IBPAZgQA+Y1kK8DchEMBXpNQPUoKSD4JniPcAAAAASUVORK5CYII=" InformativeScreenshot="e233af55909130541c79170c11edcf58.png" Reference="k3sD638TWkKWXUr3w00gUg/EEcgGZo-zkumuNk2Vj2zsg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
                           </Sequence>
-                        </ActivityAction>
-                      </ueab:ExcelForEachRowX.Body>
-                    </ueab:ExcelForEachRowX>
-                  </Sequence>
-                </ActivityAction>
-              </ueab:ExcelApplicationCard.Body>
-            </ueab:ExcelApplicationCard>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,469" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Laporan'" sap:VirtualizedContainerService.HintSize="388,197" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="UwQWUrbM0Ea1Zl3yQX3sqg" CvTextArea="445, 588, 51, 15" CvTextArgument="Laporan" CvType="Text" DesignTimeRectangle="438, 587, 57, 15" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Laporan                                 ' check:innerText='Laporan' /&gt;" Guid="17fec1a2-c48c-4d9f-8081-9582411f2d54" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD0AAAATCAYAAAAjxAWvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7VTZTsJAFPX/3/gF44tPJsboCwaDCSpuEAiLSJFFdi00tXQjV85Nppk2SIMpLmkfTmbunM7cc+ZO797xforihsR0XJCYjgu2Mm2Zxtr1/4bEdBg2mb7PnpGuqWRbJrmOTe+TgceN+23qNqvMO7bF/LCr+PZ3niu8Dt40Pqj6mPM45G2UbplTaoXQXDgLI/OuQ6PXF48HIjMNURAjYk2dUr/d4LkQIPjM8QHpc5V6rTrH7acyx1hHjO+clZnyXZbjpevSdNjjORCWC3vFpeUzJ2xcnA3s7Hk3Kw8sBnNx+zIPMeI8jIVc2sf3lBqp0xHPUWFZdBDBXMFXpGsz7wKByEyX8hdk6Bp/g6rOVyJkIahmcA++k0cZECn2B/NumwvcTkzbq2rIT65evPEJEU9Z4Cp9xBXEHHtReZmXKx3MG5brR01fnh568WTQ8QmxzAUVr885xlMFJxoMLgTxV//0OtObckVuGtUJAh1VqRa87rswdGrVirRcurwPQvBPz97G/BzRWLAmny13b1wQmpXggqbDckVq+rtYJ+Q3kZjeFWJp+q8hhqZT9AnDR7E0w33t2AAAAABJRU5ErkJggg==" InformativeScreenshot="0ed07bbbf0720564b19e503420a73af0.png" Reference="k3sD638TWkKWXUr3w00gUg/YWqmZtKrNUWZW_UFIaGWMA" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh Laporan'" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="_y1Dc2sW1EmAoigYwb2Efw" CvTextArea="453, 630, 94, 16" CvTextArgument="Unduh Laporan" CvType="Text" DesignTimeRectangle="454, 630, 92, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' type='' class='menu-item' aaname='                                                     Unduh Laporan                                                 ' check:innerText='Unduh Laporan' /&gt;" Guid="51ec8167-db72-48e0-8fd3-e0e3555d064f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAATCAYAAABvLghXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMwSURBVFhH7ZbrSxRRGMb7yyIoJCm7SRlmWlai5q01tdR107VFC5M1F1stZbsJ0s2MSohuCF3AsguJ34LoS/QhiD5E0Mnfifc0M47rrFhTOR8e5px5zry35z3nzIrvMykVwD8EAviMQACfEQjgM/6IAGPJGjV5tdWVs+L9RFz1R3e5cv8rbAKU5K20kQIKc6RyoyvnBb9DAOxh1437lxAI4DMyFkCKNH27Q7VWbVJ1e9eqzrqt6tubIc3zHOrYo0K7s1Rj6TpdJBHATUhr0WX86sZRFd6fo20ko0W29YKFBHg0Etb+G0qyVVPZevXuYbfhiGHqelRzxN9+YIv6NHnK8B8e9+rc4MH984cNh8+nlyI6ru7G7Tpf3okvvvv8vF+vXahWYFEC1BZnqdG+asP3tRaaDj93vESNxMsNNzPeqR17FQDeajvenK+mRqNmLkgnAAk+u9Zm5hSfGGRelr9K3TodMnNiDJfn6O8oXkvFBi0CHO+I7+bAz/X4tPKsp8Bii7i6DuXp8UK1AosSIFaba+Mnhpt0YASLQ6vCgAC8CuC0fSdV71rodAK4gc7DPmN2l5Mf7i41NscHD9q4Ly8GdF6M4R9c+LUj3FBdtEY/09VK5jYBGvZlm7EVdBCdyNhaMIEEDucsMIDzKsB8tq3v0r0HNABF5EiI1mxWx+q3ab/Yh3eLkSMLe/h/e69rDi/fSC7y/uvrQXXxRKk+gljTM1snqaOXfGwCsJjtaH0HSEY+Smd0vh0gQdNJzuTxJ/aWSgB2zZXeSjMnnkSkwAjg1mgcm3Tn5d6KOR3u3AH4Fo4jF/FkjiCywzIWgE6PhXJtFxLd0Dx7iTkvFuGB1SiJABEBW3IHMCf5j08Shku2FS25AJzXd882mDl+KKAIwBFBoYUnR2Kk0OTJWGpAHsRkvQMkF3AmVmy7A7DFHcM4YwEAHSl/AATC9pULB3gxyphv2ZYUGJ5AZa38ISUiO3XCzOEyFaCqcLX5UxHIn0lPeIeJgSOCppCznV0oebKGpzVH51+QMzd8y5z4ZS2+8HGypUC9HGtfnADLAW53gF8IBPAZgQA+Y1kK8DchEMBXpNQPUoKSD4JniPcAAAAASUVORK5CYII=" InformativeScreenshot="e233af55909130541c79170c11edcf58.png" Reference="k3sD638TWkKWXUr3w00gUg/EEcgGZo-zkumuNk2Vj2zsg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" ContentHash="_y1Dc2sW1EmAoigYwb2Efw" CvTextArea="453, 630, 94, 16" CvTextArgument="Unduh Laporan" CvType="Text" DesignTimeRectangle="454, 630, 92, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' type='' class='menu-item' aaname='                                                     Unduh Laporan                                                 ' check:innerText='Unduh Laporan' /&gt;" Guid="51ec8167-db72-48e0-8fd3-e0e3555d064f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAATCAYAAABvLghXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMwSURBVFhH7ZbrSxRRGMb7yyIoJCm7SRlmWlai5q01tdR107VFC5M1F1stZbsJ0s2MSohuCF3AsguJ34LoS/QhiD5E0Mnfifc0M47rrFhTOR8e5px5zry35z3nzIrvMykVwD8EAviMQACfEQjgM/6IAGPJGjV5tdWVs+L9RFz1R3e5cv8rbAKU5K20kQIKc6RyoyvnBb9DAOxh1437lxAI4DMyFkCKNH27Q7VWbVJ1e9eqzrqt6tubIc3zHOrYo0K7s1Rj6TpdJBHATUhr0WX86sZRFd6fo20ko0W29YKFBHg0Etb+G0qyVVPZevXuYbfhiGHqelRzxN9+YIv6NHnK8B8e9+rc4MH984cNh8+nlyI6ru7G7Tpf3okvvvv8vF+vXahWYFEC1BZnqdG+asP3tRaaDj93vESNxMsNNzPeqR17FQDeajvenK+mRqNmLkgnAAk+u9Zm5hSfGGRelr9K3TodMnNiDJfn6O8oXkvFBi0CHO+I7+bAz/X4tPKsp8Bii7i6DuXp8UK1AosSIFaba+Mnhpt0YASLQ6vCgAC8CuC0fSdV71rodAK4gc7DPmN2l5Mf7i41NscHD9q4Ly8GdF6M4R9c+LUj3FBdtEY/09VK5jYBGvZlm7EVdBCdyNhaMIEEDucsMIDzKsB8tq3v0r0HNABF5EiI1mxWx+q3ab/Yh3eLkSMLe/h/e69rDi/fSC7y/uvrQXXxRKk+gljTM1snqaOXfGwCsJjtaH0HSEY+Smd0vh0gQdNJzuTxJ/aWSgB2zZXeSjMnnkSkwAjg1mgcm3Tn5d6KOR3u3AH4Fo4jF/FkjiCywzIWgE6PhXJtFxLd0Dx7iTkvFuGB1SiJABEBW3IHMCf5j08Shku2FS25AJzXd882mDl+KKAIwBFBoYUnR2Kk0OTJWGpAHsRkvQMkF3AmVmy7A7DFHcM4YwEAHSl/AATC9pULB3gxyphv2ZYUGJ5AZa38ISUiO3XCzOEyFaCqcLX5UxHIn0lPeIeJgSOCppCznV0oebKGpzVH51+QMzd8y5z4ZS2+8HGypUC9HGtfnADLAW53gF8IBPAZgQA+Y1kK8DchEMBXpNQPUoKSD4JniPcAAAAASUVORK5CYII=" InformativeScreenshot="e233af55909130541c79170c11edcf58.png" Reference="k3sD638TWkKWXUr3w00gUg/EEcgGZo-zkumuNk2Vj2zsg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tanggal Permintaan'" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearchRequest&amp;menuCode=MNU_GCME_180800" ContentHash="U03lrCdgaU-_QT8HlFdPEw" CvTextArgument="Informasi Rekening" DesignTimeRectangle="716, 452, 14, 14" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl idx='2' tag='INPUT' type='radio' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='' tag='INPUT' type='radio' aaname='' /&gt;" Guid="4120b0d0-a1cd-4a94-8eb1-d0a22b2a5869" ImageBase64="" InformativeScreenshot="26b13bb96086e8c31a05b491f62cf940.png" Reference="k3sD638TWkKWXUr3w00gUg/CHJUSIKBC0KUbkciTXiiZw" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArea="734, 452, 128, 16" CvTextArgument="Tanggal Permintaan" CvType="Text" DesignTimeRectangle="735, 450, 171, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' isleaf='1' parentid='downloadReportTab' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl type='' class='col-10 pl-0' isleaf='1' parentid='downloadReportTab' tag='DIV' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Tanggal Permintaan &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:innerText='Tanggal Permintaan' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK8AAAAXCAYAAAB9Cx9tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVkSURBVGhD7ZlLSFVdFMfFRCMTTfFRko8SLR+oFJE9fKFoiQ9CFDV0IOJIURGkBjoQaSJICkqQE0cOBKMGIkHgwImCThxIk6iREwdODJysj9/63Jfj4V7v/fwsPLV/sLnus99r/8/aax/DxGLxKFa8Fs9ixWvxLFa8Fs9ixWvxLFa8Fs/yR4j3zZs30tnZKR8+fDh+cvGYnZ2Vvr4+WV1dPX5i+b/4xFtXVydXrlyRiIgIuXTpkoSHh+sv+djYWBkcHDyuefEIJl7Kr1696lsPibU2NDTIz58/j2tdLIqLizVZAuPX87LZtbW1+usFQhGvu3xpaUnKysr0+UXEijc4IYt3cXFRbty4IZGRkZpu3bolOzs7Wka9jo4OTYmJierhYmJiZHJyUsuPjo5kYGBAoqOjtezatWvS2toqr1+/9glqe3tb0tLS1CvS/927d+XFixc+cQUb/7+KFzIzMzUBYmbuZvzs7GydE5j1lZaWSmpqqp5S9Pfs2TOprq5Wr067jIwMWV5elvT0dF0n3r23t9fXh5nD7u6uNDU1qY1zcnJ0vKioKCkvL1db0T8nH4k5EXLs7e3J8+fPfWNh36GhIe2bNhMTE1rX9FVUVCT7+/tazrj19fXS3NwscXFxvj0IZC+vEJJ4MQ6b8vHjR80jmuvXr+smAfUwCs/YcIyWnJysedoS6z18+FDGx8e1PnUwbm5urhrwx48fKoqbN2/qJhmx3759WxobG0Ma/yziRTikhYUFefLkibx8+VLHIpR49OiR3Lt3T4VGe8Zjvt++fdO29MfLVFlZqeulD8qZM/Xphz7xnltbWyfmQJ9JSUkqQGOTtrY2efr0qW+Obs+7vr4unz59UvsAfZWUlMj79+91fMrW1ta0jD5oyx4CdRFrXl6etsd+OAeve/Yzhw1sGoI0m0v8OD09fVwqKjrqGKEZIRtevXqlngBD+2t/cHAghYWFAQ3sHt+fOA3+ymdmZnTzu7u7VcBZWVk6pmFjY0NaWlr0xaM9c52fnz8u/VcQVVVV8vnzZ80zD15A48kBYeKxzRrNHKh7//59FasB8TMe9cAtXjdfvnyRmpoa7dMfCQkJmsA9V3CeOl4lZM87NTWlxuBI4gKH18DTBBIPeY7GlZUVrefeCGcbfisqKk60B7OBZxnfCeUpKSkatuCBOHrpq6enR/sOCwvTRJlJnCR4Vi6qp62P8YFf9zqd7Zx/U5e25A08J089MGs3fP36VR4/fqzrxgbMjxeONpwU/f39Eh8f7ytjrUac1HHOFdz9e5GQxDs3N6dx2NjYmObZcDwRdQKJxxgskOd1eyW356UuoQUGPsv4ToKVMwZe3ul5nZy2PiMIfn+leInBifNN2LC5uemLvTkdsAX3AkDM+fn5UlBQoHnq/LXi5eKFWN69e6d5DEhMS9wWSDxOg2FcjklCBSBu5IilPW1MzEsyMeXo6Kh6SwwcyvgcuRy9/vA3Pyc8x/M7Y96uri7t8/v370HXB/yet3h5eQ8PD3VOhDYI2Hza4+WnnDaEPgjZxLzcKczFDajz14oX47F48x2Y4+nBgwcaR719+/bExhicBqO982sD7TkCjecF59cGjI4Q7ty5owYONj7enTCAvmnjxt/83Li/NnDx4pIEwdYH5y1evlKwXuZCbEy8ysvK/C5fvqyelRACW3BhQ8jYjfq82JwkXBj5p4h7rvDHive8QXwkJ84LG7jrBLuwWSy/Rbwcv3yj5NIBhAZcJvBuiJSbc3t7u4yMjPgEPDw8rB7HeCKLxc1vES/HGjGZOfY53viGauJbcB7bJjSwwrWcxm8Rr8XyK7DitXgWK16LZ7HitXgUkX8AZnul4hhbvwMAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                      <Assign DisplayName="Initiate Doc Status" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Assign_14">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[str_docStatus]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">unassigned</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[str_docStatus &lt;&gt; &quot;Sukses&quot; AND str_docStatus &lt;&gt; &quot;Gagal&quot;]" DisplayName="Wait Until File Processed" sap:VirtualizedContainerService.HintSize="450,774" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="100">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,620" sap2010:WorkflowViewState.IdRef="Sequence_118">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="str_docDetail" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Refresh Download List Table" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearchRequest&amp;menuCode=MNU_GCME_180800" ContentHash="HTfpyRKZK0-yoNQrOK7Exg" CvElementArea="1466, 560, 66, 32" CvTextArea="1485, 570, 26, 12" CvTextArgument="Cari" CvType="Button" DesignTimeRectangle="1467, 562, 63, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' class='BNI-Button-General' aaname='Cari' check:text='Cari' /&gt;" Guid="8ba08ed8-38ec-4e3c-b4e8-705083ffcabd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAhCAYAAACC9hYiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKuSURBVGhD7ZhNS9xQFIb7V7rrf+heunZXKG5dta6ki9JCocV24Uq6EaFIpdgKLdiVSKUf4EqxCCJqSy0Wq9PBMfNhTExyvO8NydwkJzPqJGMSsniYSc5N5p53zldyo36wTSUupRgKlxNj4yvV370kbeweafdvkzZ0i7S7N7MD9oN9if1hn3K/nB8xXEyM5Y+uANwGsg6EEftn/QrRXYxXI/yP5Az4wfqnEC+GCDHt4R32xrlF+NMpdXgxIARyj7th3hF+xQnCilG4iAiDCGH8jopRkBrRDa6GBMVA12AuLCrhLhMQI7ft86qg7Sr+t8VA0eQuyBDWzx+kv37C2q6KWkzbYmCyZBb3ivFpkpxahZyTpsSu7pM+9Yhdex3ISTUsRhopYi7Nkv3/L7Wet+99+n6cnMYRtcaHA2uvDSVV2mIkPFe0xoaIDJ0aowMRGyID58HZ+ndyWpobOVrVF0l/84zsvS0yl+elDemBY5wP368nMHdExEj4ocv8MkfW1gpr84DjSCPv2IskfIfTEBNiePZUxBB+R8XgFvYA/nHA2TpBpiE/ZWRU9gK2VMQQRMVIODKMxRmyfq2zNo/m40GydtbcNKkfkX2wK1MCNimGcF5d37/ISLhmoB44zWO2UKJmoKhCLPPbB/88xHEaNXdNv8Rga0ZK3cSpHdLJxAP/nD79VPz7DdLfviDrz2agZqDTkGO76/olBtdN0pozpPPqnPFv158zEDXoINImUuVs9bOw/yZjYbpvYrBzRh4m0DTgJ1BBGqmSaZQUAQExyqdW5UBSvs8IUr7pUkExTXjuyAyYK5SiqcKLASBI0SIEEREjBIgXw6MgNYSrEWG6iwHQZfLadtE+Q10jjouJ4YEQw6QKYVBTEn646xnsB/uCAJgsO6QEx+XEKDilGD7bdA6OgB03KtcrQgAAAABJRU5ErkJggg==" InformativeScreenshot="be5076dfb091b709fe557c4cdde2b493.png" Reference="k3sD638TWkKWXUr3w00gUg/nwVkORVnzUeGZw9f4rIPEQ" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <uix:NCheckState DisplayName="Skip file if Table Not Loaded for 10 Minutes" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Timeout="600" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_128">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_20" Row="[CurrentRow]" Value="[&quot;Gagal&quot;]" />
+                                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_21" Row="[CurrentRow]" Value="[&quot;Daftar unduh laporan tidak terbuka.&quot;]" />
+                                  <ui:Continue sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="Qp2s0swbrE6MUVmvnUiaJA" CvTextArea="715, 621, 178, 19" CvType="AnyWordGroup" DesignTimeRectangle="691, 607, 839, 44" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' /&gt;" Guid="44269b42-35b8-45c1-86f7-e1df4af3d5e7" InformativeScreenshot="df28f2f83ac52264385bdf9d0a391838.png" Reference="k3sD638TWkKWXUr3w00gUg/r6nOqftrd0SlQw4ARtLKjg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                            <uix:NGetText DisplayName="Get Text 'Status'" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" TextString="[str_docStatus]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable CvTextArea="1336, 712, 46, 13" CvType="AnyWordGroup" DesignTimeRectangle="1337, 711, 45, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl idx='4' role='row' /&gt;&lt;ctrl name='Sukses' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='editable text' automationid='' /&gt;" Guid="5906dfb0-2dc4-4142-9055-d722230340f3" InformativeScreenshot="cacddb25b83d8b396e0c88f5e70e5785.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="AA" Version="V3" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArea="1336, 661, 44, 12" CvTextArgument="Status" CvType="Text" DesignTimeRectangle="1337, 659, 42, 16" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl idx='3' role='row' /&gt;&lt;ctrl name='Status' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Status' role='editable text' automationid='' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NGetText>
+                            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="UpdateRowItem_22" Row="[CurrentRow]" Value="[str_docStatus]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:UpdateRowItem>
+                            <uix:NGetText DisplayName="Get Text 'cell'" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" TextString="[str_docDetail]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="1414, 703, 116, 51" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl idx='4' role='row' /&gt;&lt;ctrl idx='7' role='cell' /&gt;" FuzzySelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl automationid='' role='cell' /&gt;" Guid="65c897f2-9b83-444a-a33c-5774d7ffe3f0" InformativeScreenshot="48619a9f7bf76d988de2209cd7a47530.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' /&gt;" SearchSteps="FuzzySelector" SelectionStrategy="AA" Version="V3" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArea="1419, 661, 77, 15" CvTextArgument="Keterangan" CvType="Text" DesignTimeRectangle="1420, 659, 76, 16" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl idx='3' role='row' /&gt;&lt;ctrl name='Keterangan' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='Keterangan' role='editable text' automationid='' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NGetText>
+                            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,75" sap2010:WorkflowViewState.IdRef="UpdateRowItem_23" Row="[CurrentRow]" Value="[str_docDetail]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:UpdateRowItem>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InterruptibleWhile>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Latest Item on Unduh Laporan Table" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="-WMv9EKcB0Weu-FZt7LkGg" CvElementArea="715, 710, 17, 17" CvType="CheckBox" DesignTimeRectangle="717, 712, 14, 14" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl type='checkbox' tag='INPUT' class='' aaname='' /&gt;" Guid="e2c37ac8-c1e7-4c92-ad31-ba8a6f0fcf3a" InformativeScreenshot="9717303643adb54846a8504e44a0ab7e.png" Reference="k3sD638TWkKWXUr3w00gUg/LImBYe_44kWkX_rCTYcjmg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                <uix:Target DesignTimeRectangle="691, 651, 66, 52" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='' check:text='unchecked' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAA4CAYAAABABo41AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF9SURBVGhD7dc9SgNhFIVh16AIgouQLEYrBWslkAW4Aps0ghoyij+4ABEbG7GxtFY3IIKNRUqvXOVE5vAhQZhBmPfAy22SgXm6mXt/eYrs4bQf93trcbPTi6v+clxuLXa6Kczt4XZc767GxWAlqs2lGG0sxGh9vrNNYVh9NZiPx5POJwdgLDkAY8kBGEsOwFhyAMaSAzCWHICx5NA6zPPdcZxXVQyHs1UdVF//KT2rieTQOsx4vwzwWwlZelYTyaF1GL3srNPvS89qolxeYKxcXmCsXF5grFxeYKxcXmCsXF5grFxeYKxcXmCsXF5grFze1mH+8klwNj4qPquJ5NA6TH4Q5ouWAEolZCc+Iv97cgDGkgMwlhyAseQAjCUHYCw5AGPJARhLDsBYcgDGkgMwlhyAseQAjCUHYCw5AGPJARhLDsBYcgDGkgMwlhyAseQAjCUHYCw5AGPJARhLDsBYcgDGkgMwlhyAseQAjCWHGgz7WQ3m9W3S+b4dJvEJjb34d0WK1HQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                <uix:Target CvTextArea="762, 660, 68, 13" CvTextArgument="Nama File" CvType="Text" DesignTimeRectangle="757, 651, 236, 52" ElementType="Text" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' aaname='Nama File' check:innerText='Nama File' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPAAAAA4CAYAAADD7nVLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASHSURBVHhe7dn/a1V1HMfx+zcE/QFBK9fcdnf3RTfnvrm5NZc23dDFyhZO80vkoqQvmmAWWmiKZbXKWFK/WWFEpEQGQV8Q/KH6QYIo6IcQ6od+MOiHPt3XR96Hc+9u7m4Vu296HnjAPed8zpfBnvuce5Y5u+PGAMCnzPT4DQGAT5nAwsLidsn8eXkmiBb7DKCyWa8EDDhkvRIw4JD1SsCAQ9YrAQMOWa8EDDhkvRIw4JD1SsCAQ9YrAQMOWa8EDDhkvf7vAp4YG4r0+aFto2Hr3WvDdx8fnTUOqGTW65wBn5vZG7o728K6wZ7wx7dvFOw7eXB7jEBj0tsXi+6jprYu3HzrbaFqSU2itj4bDjx8z6zxBAyvrNeyAlYEiuLEgW0F+yoxYN2P7qvU/mIEDK+s17ICfnByQ2htbYkzcTrW4oC//+RYnKmX1NTG6OuzDeH087uT8UMDXaGna0XoW7UyVFXXxHFTW0fCkX1bQi6Xi38kdEz6GmdffTQsX9Ycx0tHe2u4fP5Isj+tnIB1D6LPpQL+4NRjIdeYuzZ756+nn/mbD59N9gOVwHotK2D9oisyRdzS0pQEVBzwhbf3h3Nv7g2/f/16fNxWzH097eGrd5+O+xVpdT7aw49PxPXJ8bWhqbkxjK7ri5H8+OnxsLJ9eYxc+3WOj2aeCOdP74vruq6uv6JtWVwv9k8DPvPSI2Ekfy+7J0fitfVzrL+jNz++m1kaFcV6LTtgRWEBKeRfL74yK+Bimn0ViAWlgMW+S2v72Pr+JGjp7+2IbL3YXSMDYXhoVcmgdB/NzU1xZtdMLrrfPTs2JmOuF7D+cHR1tIXfLk0n4y+9fyjsnBgO+6fGk23AYrNe5xWwrdtLrReeur8g4C/OHAyr84/HepGkmVYvj/S4bMem4xFt37xxMNlfPEahv3Z4V4z+luql8XxL6+rjrP53AafvtZT0+YsDvqmqOrL4pS6bjY/wpV6CAYvFep13wKLPFoIF/PPnL8aZc01/V3z01Lh3Xt4Tdt03nBybjsfOc72ANYPrXz5Hn9wS1xX09nvvjMf8FwFr++DqzoIZGKhE1uuCAhZt0yyrWUpjfrhwPGwa7g+bN62JoYm+SyqKhQY8fWhnDPatY1Nx/cqXJ+N35samxn8tYP2B0GOy1nX82IaBgu/AGqNH6J8+O1FwHmAxWa8LDli/4HqMTr+Z1oypoPUGV3ErlN7u9vhiSPvT8chcAesamiF1Lp0z29AQrzk+ens49dwDyTFmvgFrvO5Xj+e6jrYVv4XuzH8nvvjeMwXnABab9TpnwAAqj/VKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5ZrwQMOGS9EjDgkPVKwIBD1isBAw5Zr5n4iYWFxeWSufLL1SBa7DOAynat16vhL1oEOe/n1xsOAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                      <If Condition="[str_docStatus.Contains(&quot;Sukses&quot;)]" DisplayName="Download Latest Item Report If Process Succees" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="If_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence DisplayName="then Download File" sap:VirtualizedContainerService.HintSize="496,842" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="IXtHC1CSpkqeJ6KTOAjQtA" CvElementArea="1360, 823, 85, 32" CvTextArea="1382, 832, 42, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1363, 825, 81, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='buttonDownloadList' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='buttonDownloadList' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="31bc5a04-a073-4373-91ec-bb8238119997" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAhCAYAAACoRueNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARkSURBVGhD7ZpLT1NBFMf7VVzJV1D3ytqVGOULKLJCFsaFCVFZuPERY2JiopGgJhpNDGKUQniKPEsLLQVaaGkL2Dcgr/Y4/7lMvbc9bamtpNpL8st9zMzpnT9nzp05cy2J0DzlIxlyS2IBF4X9sxT02MjjGqfFuTEKiPNowEnxoItt+yesee205ByT9v2L07Sx4qDoqlM8g3iWNTfbppqATnjeIqJqaILOkG9hirzzE7QsWF+2s23KIaQTNbBkE787Jx70UNSsutVMQVElQeFBQkAI6fvWRWvP2yjcdpFiV09TvLGO4g0n/j/Qr6YzFL9ziRKv2inh6OO1yUKNqIKiYmhjiIesnbR+6wL/ALUCBB56x+qkgKib+URFIQTFsI/cb+J/pEZJPGrO0UsPtMsRVblwbKaXoi3nWMM1T2t9wZBgEBWC4hi392oxkzNooiFibj5hM6IqD8Wwj12v5w2ZGIHHHuqnRyeqWwbZ2MNm3oAJCxdjjaIOv2MbmhRGzQrUaDcMf0wbuEYmRcB0S4kqnNOiXk5Rm5VvUIXs9XTSvq2fLcsm5XPRzxdtbFklwUtLvo/EvN4i19Ri1RTpuM1WLgd0PF/n0VmIw5UVoxpFjXe2y3X/D98sPFV742PpyVYug1oSNSL0w3I+5J3Rhj+WotErp9jK5XBUUXG+8/oeHXgdlN6KE+3+NAgOG7iHMtTZ632Tscv9c/RCyvOOu5QKLGVs77y9b6hfCaDfinuS/ItTZEG6akO4bKzxJFu5HEoRNZ2M0PaDa/IaIqQTEXm+/72bUkEPJVvOamVPb8i6pYia2vBnbEPQdGzDUL8SQD8knZCytCCHiZQeV7FcShF1t+uZoTy9vakdhbjbT1oNZaV6arZt2ts1XFcKpENlTF0WLjvvGP0rnro39CG/qKsLmWGoF0GhPBV/+vsAIpYiaj7bFaWxTk6pZJYKSWe3EPVvxFR0JrXuy7mPoYzYpoZ0oY6znqoT9cA1liuq+M1jF7XpzO95KrZHFma/i7d/A1+5TKQnjXzMXEPIA4/d4MGFOg5vR0zdvHleXuOYjq5l2qMc9lS7/fGvMmYeu6iHCwAgPdXrmqDwy8rPU4EUUYSY9M6WjJM4ouP6OsU6jhiq2sMLd94/lsKiDPZT4aBWnoxq8XaiR4Ly4xJV7hAoUfGSwoZeeNrYUZPS0KcBLXKDDVMq7Izeucw2MCmCbuhLUTENkIKKVVVyyMxS/QnZe1eWiH9OvrFUYgX5Qa6hCQ+bT9X21XWiCpDR5gyYZJEv849hn1OANBb2vTlDJhpH2aPKAcKaHstTym4qixljDRTb9weZzH9BMCuo9a0WTJuKfKGiKO6peuDyYuUgBUbMNb+lYilN1COisjUKTNuwHLZNDtLoiJX6+j5Tj/VTXr4NW2nJOS4/TVQv0iONqCqhYqKi04Zp2eEmGD6HDHlm5CeS9qkhGhvto8GBL1JYa2+3QUzcGxBlk+P9tCKWz8om9tH+HVHn6RfCKVKBM7H4KwAAAABJRU5ErkJggg==" InformativeScreenshot="07c53e8ee4cff64d550bd2052b1bb29c.png" Reference="k3sD638TWkKWXUr3w00gUg/Dgv1H7cBb0GfbOTOYFWhLg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_15">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[str_attachmentFilePath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[CurrentRow.Item("File Path").ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DOWNLOAD_REPORT_2103202…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,258" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Text="[str_attachmentFilePath]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable CvElementArea="128, 425, 821, 24" CvType="InputBox" DesignTimeRectangle="136, 429, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="7540bfdc-e2e5-4ebe-be67-20d1d0fb1db3" InformativeScreenshot="b0111e1b99bdea6248fd1ec3e0e5501d.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="434,180" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="747, 494, 88, 26" CvTextArea="778, 500, 26, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="747, 494, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="015bf530-c7f9-4cbc-9325-c3417991a77e" InformativeScreenshot="aad10341e5e0cae5a9bda3d6363ca0ca.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_130">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Remove Latest Item After Download" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="VNBsntO9V06tSD0lkZDUYw" CvElementArea="1450, 823, 82, 32" CvTextArea="1471, 833, 40, 15" CvTextArgument="Hapus" CvType="Button" DesignTimeRectangle="1452, 825, 78, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='BNI-Button-No' name='buttonDownloadList' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='BNI-Button-No' name='buttonDownloadList' tag='INPUT' type='button' aaname='Hapus' check:text='Hapus' /&gt;" Guid="e5affc77-997a-4bc1-becc-9baa4fda0afb" ImageBase64="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" InformativeScreenshot="a8ee77b26f088b8923e29b7cdd69d845.png" Reference="k3sD638TWkKWXUr3w00gUg/wvjknQaxvkGc8t6NEjAKug" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Confirm Latest Item Removal" sap:VirtualizedContainerService.HintSize="450,77" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable CvElementArea="1040, 579, 53, 42" CvTextArea="1057, 594, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1045, 584, 42, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='OK' role='push button' automationid='' check:text='OK' /&gt;" Guid="dcf94e7d-e050-4cac-9925-bd4d46a466cd" InformativeScreenshot="23186216dd498f2acfb50c19f61e3ce0.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="0, 0, 0, 0" />
+                </uix:NApplicationCard.TargetApp>
+              </uix:NApplicationCard>
+            </Sequence>
+            <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="496,1276" sap2010:WorkflowViewState.IdRef="Sequence_132">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="si:DirectoryInfo" Name="str_outputExtractedDirPath" />
+                <Variable x:TypeArguments="x:String" Name="str_outputExtractedFilePath" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <umab:CreateHtmlContent DisplayName="Create HTML Content" sap:VirtualizedContainerService.HintSize="434,92" HtmlContent="[str_emailBody]" sap2010:WorkflowViewState.IdRef="CreateHtmlContent_2">
+                <umab:CreateHtmlContent.HtmlContentArg>
+                  <umabh:HtmlContentArgument FilePath="{x:Null}" HtmlBody="&lt;HTML&gt;&lt;HEAD&gt;&#xA;&lt;STYLE type=text/css&gt;&#xA;        body {&#xA;            font-family: Calibri;&#xA;        }&#xA;&#xA;        p {&#xA;            margin: 0;&#xA;        }&#xA;&#xA;        .mapping {&#xA;            background-color: #D3D4D7;&#xA;            color: black;&#xA;            padding: 1px;&#xA;        }&#xA;    &lt;/STYLE&gt;&#xA;&lt;!-- Instruct the web browser control to use IE 6 to render the page. --&gt;&#xA;&lt;META content=IE=6 http-equiv=X-UA-Compatible&gt;&lt;/HEAD&gt;&#xA;&lt;BODY&gt;&#xA;&lt;P&gt;Selamat Pagi,&lt;/P&gt;&#xA;&lt;P&gt;Yth. Bapak / Ibu Nasabah BNI Custody&lt;/P&gt;&#xA;&lt;P&gt;Terlampir kami sampaikan mutasi rekening giro Nasabah BNI Custody yang telah diproses sampai dengan pukul 08:30 WIB melalui BNI Direct.&lt;/P&gt;&#xA;&lt;P&gt;Mohon dapat diterima dan dipergunakan sebagaimana mestinya.&lt;/P&gt;&lt;BR&gt;&#xA;&lt;P&gt;Regards,&lt;/P&gt;&#xA;&lt;P&gt;PT. BANK NEGARA INDONESIA (PERSERO) TBK - DIVISI OPERASIONAL BNI CUSTODY -&lt;BR&gt;Plaza BNI BSD Lantai 14, CBD BSD City Lot 1 No. 5 Jl. Pahlawan Seribu, Lengkong Gudang Serpong - Tangerang Selatan 15310&lt;BR&gt;Phone : 021- 25541220 Ext. 3148 s/d 3154 Fax : 021- 29514053 / 021-29514054&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;">
+                    <umabh:HtmlContentArgument.RuntimeImages>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </umabh:HtmlContentArgument.RuntimeImages>
+                    <umabh:HtmlContentArgument.ValueMappings>
+                      <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="0" />
+                    </umabh:HtmlContentArgument.ValueMappings>
+                  </umabh:HtmlContentArgument>
+                </umab:CreateHtmlContent.HtmlContentArg>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </umab:CreateHtmlContent>
+              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="BNIDirect_BccList" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+                <ui:GetRobotAsset.Value>
+                  <OutArgument x:TypeArguments="x:String">[str_bccList]</OutArgument>
+                </ui:GetRobotAsset.Value>
+              </ui:GetRobotAsset>
+              <uascw:ExtractFiles Content="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[str_outputDirPath]" DestinationFolderInfo="[str_outputExtractedDirPath]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="True" FileToExtract="[str_attachmentFilePath]" sap:VirtualizedContainerService.HintSize="434,247" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False" />
+              <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_17">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_outputExtractedFilePath]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Directory.GetFiles(str_outputExtractedDirPath.FullName).First]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[If(CurrentRow.Item(&quot;Status&quot;).ToString.Contains(&quot;Sukses&quot;), {str_outputExtractedFilePath}, {})]" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="kemas.m3@gmail.com" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Name="BNI CUSTODY" Password="qloo iosx pkom pbee" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
+                <ui:SendMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                </ui:SendMail.Files>
+              </ui:SendMail>
+              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Mail Sent" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_24" Row="[CurrentRow]" Value="[&quot;Sent&quot;]" />
+              <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="434,103" sap2010:WorkflowViewState.IdRef="DeleteFolderX_2" Path="[str_outputExtractedDirPath.FullName]" Recursive="True" />
+            </Sequence>
           </Sequence>
         </ActivityAction>
-      </ueab:ExcelProcessScopeX.Body>
-    </ueab:ExcelProcessScopeX>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,181" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;traverse_unprocessed_rows: success&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ueab:SequenceX DisplayName="Create Output File" sap:VirtualizedContainerService.HintSize="592,2367" sap2010:WorkflowViewState.IdRef="SequenceX_2">
+      <ueab:SequenceX.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="bool_isOutputFileExists" />
+      </ueab:SequenceX.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Start Creating Output File&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <ui:MergeDataTable Destination="[DT_SucceedRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[DT_UnprocessedRows]" />
+      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="No" DataTable="[DT_SucceedRows]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="530,120" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[DT_SucceedRows]" SortOrder="Ascending" />
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="File Type" DataTable="[DT_SucceedRows]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="530,226" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="File Path" DataTable="[DT_SucceedRows]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="530,226" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+      <ui:FileExistsX DisplayName="File Exists" Exists="[bool_isOutputFileExists]" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[str_outputFilePath]" />
+      <If Condition="[bool_isOutputFileExists]" sap:VirtualizedContainerService.HintSize="530,444" sap2010:WorkflowViewState.IdRef="If_9">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="Sequence_133">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[str_outputFilePath]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_134">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,785" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[str_outputFilePath]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel_OutputFIle" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,493" sap2010:WorkflowViewState.IdRef="Sequence_73">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="434,226" sap2010:WorkflowViewState.IdRef="InsertSheetX_1" Name="Sheet1" Workbook="[Excel_OutputFIle]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:InsertSheetX>
+              <ueab:WriteRangeX Destination="[Excel_OutputFIle.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[DT_SucceedRows]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelApplicationCard>
+    </ueab:SequenceX>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logout.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Logout.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="ui:UiElement" x:Key="Input_Element">[webpage]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

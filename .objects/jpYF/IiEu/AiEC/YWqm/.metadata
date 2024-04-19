@@ -1,0 +1,13 @@
+﻿{
+  "Name": "label_laporan",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "YWqmZtKrNUWZW_UFIaGWMA",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/YWqmZtKrNUWZW_UFIaGWMA",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-18T08:26:06.54196Z",
+  "Updated": "2024-04-18T08:26:06.54196Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

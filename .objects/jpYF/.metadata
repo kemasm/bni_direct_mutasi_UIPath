@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Firefox: BNIDirect Id Pengguna : ROBOT app",
+  "Type": "App",
+  "Id": "jpYFpmBR00WJpEzgViUbfg",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/jpYFpmBR00WJpEzgViUbfg",
+  "Created": "2024-04-18T04:23:55.0645813Z",
+  "Updated": "2024-04-18T08:38:48.389231Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Laporan Screen",
+  "Type": "Screen",
+  "Id": "YPGNSj8r-0KWR4TGV3RnVw",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/IiEuMp-iKk62I81uXicA8g",
+  "Created": "2024-04-18T08:28:06.7779011Z",
+  "Updated": "2024-04-18T08:38:48.4131403Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

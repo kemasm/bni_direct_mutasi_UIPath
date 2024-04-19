@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4YxgGFa8LEuQbqhUdWrOEA" Reference="k3sD638TWkKWXUr3w00gUg/F3fwqRSyoUCmjMlnp5L-kw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=topRequest" ContentHash="kxfnx_lJ006HZTqHXDwj1w" DesignTimeRectangle="1338, 98, 47, 21" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl name='topFrame1' tag='IFRAME' /&gt;&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl name='topFrame1' tag='IFRAME' /&gt;&lt;webctrl tag='A' type='' class='glyphicon glyphicon-home border-left border-right border-secondary px-3 py-1 BNI-TextColor-Black' aaname='                     ' /&gt;" Guid="919485e7-fb43-4743-8a61-ebfc6501fad1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAAZCAYAAACclhZ6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACqSURBVFhH7dO9CYAwEIDRzCOCq9i6g62NILiEtaUjOIBLOIEDuMBJkEDUoPnxgh5XfE0uhDxCxLrMQCWamLJqLsM/pN+bMV+KMf6N0KYChJAl0E6mPf5FxOgQHFAkjAmieg8UAdNBYUTovQNCxthAVOEgRIwLRBUGQsLc/ZGnchiMZz6H+DIyF5Q/QsUY+66YrB73WZ8f1hlzijH2kcLEjTFfjT6GQoQwM2yioeJ39t/YlgAAAABJRU5ErkJggg==" Reference="k3sD638TWkKWXUr3w00gUg/F3fwqRSyoUCmjMlnp5L-kw" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="aca65835bc4c39fd7073dc0ac2184c74.png" xmlns="">0ovdDTCKq3ESgDzRtX-jDyA</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "input_noRekening",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "-DSF8oEzZEOehgJFv2bK5g",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/-DSF8oEzZEOehgJFv2bK5g",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-18T05:48:11.2768872Z",
+  "Updated": "2024-04-18T05:48:11.2768872Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

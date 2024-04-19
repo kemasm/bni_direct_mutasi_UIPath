@@ -1,0 +1,16 @@
+﻿{
+  "Name": "button_home",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "F3fwqRSyoUCmjMlnp5L-kw",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/F3fwqRSyoUCmjMlnp5L-kw",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/3eBRES0HV0i7p5691jIJcQ",
+  "Created": "2024-04-18T04:23:55.2189198Z",
+  "Updated": "2024-04-18T05:04:38.8070244Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

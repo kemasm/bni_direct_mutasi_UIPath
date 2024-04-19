@@ -1,0 +1,13 @@
+﻿{
+  "Name": "img_HomeBanner",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "5C8lI4vPskifdrspm8hVyw",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/5C8lI4vPskifdrspm8hVyw",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/3eBRES0HV0i7p5691jIJcQ",
+  "Created": "2024-04-18T05:04:39.3326598Z",
+  "Updated": "2024-04-18T05:04:39.3326598Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
