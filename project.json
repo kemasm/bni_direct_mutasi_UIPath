@@ -9,7 +9,7 @@
     "UiPath.Mail.Activities": "[1.22.1]",
     "UiPath.Presentations.Activities": "[1.12.2]",
     "UiPath.Python.Activities": "[1.8.1]",
-    "UiPath.System.Activities": "[24.2.0-preview]",
+    "UiPath.System.Activities": "[24.3.0]",
     "UiPath.UIAutomation.Activities": "[24.2.0-preview]",
     "UiPath.Word.Activities": "[1.19.1-preview]"
   },
@@ -17,7 +17,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.2.1.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1-alpha",
   "runtimeOptions": {
     "exceptionHandlerWorkflow": "GlobalHandlerX.xaml",
     "autoDispose": false,
@@ -54,7 +54,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "b8df19f6-5d02-4fed-a34f-cc73239a0687",
+      "uniqueId": "78e25c85-518f-4138-9ea7-57b59644df89",
       "input": [],
       "output": []
     }
