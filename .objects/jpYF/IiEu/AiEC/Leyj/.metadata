@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Element_mutasiRekeningMarker",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "LeyjUFk-nkuhwQjOw8nEFQ",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/LeyjUFk-nkuhwQjOw8nEFQ",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-23T04:24:29.1502096Z",
+  "Updated": "2024-04-23T04:24:29.1502096Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
