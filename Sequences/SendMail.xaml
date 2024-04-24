@@ -1,7 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SendMail" this:SendMail.bool_hasAttachment="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SendMail" this:SendMail.bool_hasAttachment="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="CurrentRow" Type="InArgument(sd:DataRow)" />
-    <x:Property Name="str_attachmentFilePath" Type="InArgument(x:String)" />
     <x:Property Name="str_outputDirPath" Type="InArgument(x:String)" />
     <x:Property Name="bool_success" Type="OutArgument(x:Boolean)" />
     <x:Property Name="bool_hasAttachment" Type="InArgument(x:Boolean)" />
@@ -9,11 +8,6 @@
   <this:SendMail.CurrentRow>
     <InArgument x:TypeArguments="sd:DataRow" />
   </this:SendMail.CurrentRow>
-  <this:SendMail.str_attachmentFilePath>
-    <InArgument x:TypeArguments="x:String">
-      <Literal x:TypeArguments="x:String" Value="" />
-    </InArgument>
-  </this:SendMail.str_attachmentFilePath>
   <this:SendMail.str_outputDirPath>
     <InArgument x:TypeArguments="x:String">
       <Literal x:TypeArguments="x:String" Value="" />
@@ -22,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1514,818</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1367,2589</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -64,6 +58,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -128,14 +123,20 @@
       <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="496,661" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="592,2524" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:DirectoryInfo" Name="str_outputExtractedDirPath" />
       <Variable x:TypeArguments="x:String" Name="str_outputExtractedFilePath" />
       <Variable x:TypeArguments="x:String" Name="str_emailBody" />
       <Variable x:TypeArguments="x:String" Name="str_bccList" />
+      <Variable x:TypeArguments="x:Int32" Name="int_smtpPort" />
+      <Variable x:TypeArguments="x:String" Name="str_smtpServer" />
+      <Variable x:TypeArguments="x:String" Name="str_smtpEmail" />
+      <Variable x:TypeArguments="ss:SecureString" Name="SecureString_SmtpPass" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,7 +144,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:CreateHtmlContent DisplayName="Create HTML Content" sap:VirtualizedContainerService.HintSize="434,192" HtmlContent="[str_emailBody]" sap2010:WorkflowViewState.IdRef="CreateHtmlContent_1">
+    <umab:CreateHtmlContent DisplayName="Create HTML Content" sap:VirtualizedContainerService.HintSize="530,192" HtmlContent="[str_emailBody]" sap2010:WorkflowViewState.IdRef="CreateHtmlContent_1">
       <umab:CreateHtmlContent.HtmlContentArg>
         <umabh:HtmlContentArgument FilePath="{x:Null}" HtmlBody="&lt;HTML&gt;&lt;HEAD&gt;&#xA;&lt;STYLE type=text/css&gt;&#xA;        body {&#xA;            font-family: Calibri;&#xA;        }&#xA;&#xA;        p {&#xA;            margin: 0;&#xA;        }&#xA;&#xA;        .mapping {&#xA;            background-color: #D3D4D7;&#xA;            color: black;&#xA;            padding: 1px;&#xA;        }&#xA;    &lt;/STYLE&gt;&#xA;&lt;!-- Instruct the web browser control to use IE 6 to render the page. --&gt;&#xA;&lt;META content=IE=6 http-equiv=X-UA-Compatible&gt;&lt;/HEAD&gt;&#xA;&lt;BODY&gt;&#xA;&lt;P&gt;Selamat Pagi,&lt;/P&gt;&#xA;&lt;P&gt;Yth. Bapak / Ibu Nasabah BNI Custody&lt;/P&gt;&#xA;&lt;P&gt;Terlampir kami sampaikan mutasi rekening giro Nasabah BNI Custody yang telah diproses sampai dengan pukul 08:30 WIB melalui BNI Direct.&lt;/P&gt;&#xA;&lt;P&gt;Mohon dapat diterima dan dipergunakan sebagaimana mestinya.&lt;/P&gt;&lt;BR&gt;&#xA;&lt;P&gt;Regards,&lt;/P&gt;&#xA;&lt;P&gt;PT. BANK NEGARA INDONESIA (PERSERO) TBK - DIVISI OPERASIONAL BNI CUSTODY -&lt;BR&gt;Plaza BNI BSD Lantai 14, CBD BSD City Lot 1 No. 5 Jl. Pahlawan Seribu, Lengkong Gudang Serpong - Tangerang Selatan 15310&lt;BR&gt;Phone : 021- 25541220 Ext. 3148 s/d 3154 Fax : 021- 29514053 / 021-29514054&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;">
           <umabh:HtmlContentArgument.RuntimeImages>
@@ -161,33 +162,56 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </umab:CreateHtmlContent>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="BNIDirect_BccList" CacheStrategy="None" DisplayName="Get BccList in Orchestrator Asset" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="BNIDirect_BccList" CacheStrategy="None" DisplayName="Get BccList in Orchestrator Asset" sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[str_bccList]</OutArgument>
       </ui:GetRobotAsset.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <If Condition="[bool_hasAttachment]" DisplayName="If attachment exist" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="BNIDirect_SmtpPort" CacheStrategy="None" DisplayName="Get BccList in Orchestrator Asset" sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:Int32">[int_smtpPort]</OutArgument>
+      </ui:GetRobotAsset.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="BNIDirect_SmtpServer" CacheStrategy="None" DisplayName="Get BccList in Orchestrator Asset" sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[str_smtpServer]</OutArgument>
+      </ui:GetRobotAsset.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotAsset>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="BNIDirect_SmtpAccount" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SecureString_SmtpPass]" Username="[str_smtpEmail]" />
+    <If Condition="[bool_hasAttachment]" DisplayName="If attachment exist" sap:VirtualizedContainerService.HintSize="530,1175" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then extract attachment, and send it within mail" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then extract attachment, and send it within mail" sap:VirtualizedContainerService.HintSize="496,743" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uascw:ExtractFiles Content="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[str_outputDirPath]" DestinationFolderInfo="[str_outputExtractedDirPath]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="True" FileToExtract="[str_attachmentFilePath]" sap:VirtualizedContainerService.HintSize="434,247" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False" />
+          <uascw:ExtractFiles Content="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[str_outputDirPath]" DestinationFolderInfo="[str_outputExtractedDirPath]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="True" FileToExtract="[CurrentRow.Item(&quot;File Path&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,247" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False" />
           <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[str_outputExtractedFilePath]</OutArgument>
@@ -196,7 +220,7 @@
               <InArgument x:TypeArguments="x:String">[Directory.GetFiles(str_outputExtractedDirPath.FullName).First]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[If(CurrentRow.Item(&quot;Status&quot;).ToString.Contains(&quot;Sukses&quot;), {str_outputExtractedFilePath}, {})]" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="kemas.m3@gmail.com" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Name="BNI CUSTODY" Password="qloo iosx pkom pbee" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
+          <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[If(CurrentRow.Item(&quot;Status&quot;).ToString.Contains(&quot;Sukses&quot;), {str_outputExtractedFilePath}, {})]" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[str_smtpEmail]" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Name="BNI CUSTODY" Port="[int_smtpPort]" SecureConnection="Auto" SecurePassword="[SecureString_SmtpPass]" Server="[str_smtpServer]" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
             </ui:SendMail.Files>
@@ -205,14 +229,14 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else just send the mail" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Else just send the mail" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="kemas.m3@gmail.com" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Name="BNI CUSTODY" Password="qloo iosx pkom pbee" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
+          <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[str_smtpEmail]" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Name="BNI CUSTODY" Port="[int_smtpPort]" SecureConnection="Auto" SecurePassword="[SecureString_SmtpPass]" Server="[str_smtpServer]" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
             </ui:SendMail.Files>
@@ -220,15 +244,15 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Mail Sent" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1" Row="[CurrentRow]" Value="[&quot;Sent&quot;]">
+    <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Mail Sent" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="530,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1" Row="[CurrentRow]" Value="[&quot;Sent&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:UpdateRowItem>
-    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="530,105" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[bool_success]</OutArgument>
       </Assign.To>
