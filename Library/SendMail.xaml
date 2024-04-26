@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1367,2589</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>582,2589</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -220,7 +220,7 @@
               <InArgument x:TypeArguments="x:String">[Directory.GetFiles(str_outputExtractedDirPath.FullName).First]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[If(CurrentRow.Item(&quot;Status&quot;).ToString.Contains(&quot;Sukses&quot;), {str_outputExtractedFilePath}, {})]" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[str_smtpEmail]" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Name="BNI CUSTODY" Port="[int_smtpPort]" SecureConnection="Auto" SecurePassword="[SecureString_SmtpPass]" Server="[str_smtpServer]" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
+          <ui:SendMail ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[If(CurrentRow.Item(&quot;Status&quot;).ToString.Contains(&quot;Sukses&quot;), {str_outputExtractedFilePath}, {})]" Bcc="[str_bccList]" Body="[str_emailBody]" Cc="[CurrentRow.Item(&quot;CC EMAIL&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[str_smtpEmail]" EnableSSL="True" From="robot.opr@bni.co.id" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="True" IsBodyHtml="True" Name="BNI CUSTODY" Port="[int_smtpPort]" SecureConnection="Auto" SecurePassword="[SecureString_SmtpPass]" Server="[str_smtpServer]" Subject="Pengiriman Mutasi Rekening Giro Nasabah" To="[CurrentRow.Item(&quot;ALAMAT EMAIL&quot;).ToString]">
             <ui:SendMail.Files>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
             </ui:SendMail.Files>
