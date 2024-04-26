@@ -3,7 +3,7 @@
     <x:Property Name="UiElement_Webpage" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="CurrentRow" Type="InArgument(sd:DataRow)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1367,2835</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>828,3749</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -141,33 +141,33 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="838,2770" sap2010:WorkflowViewState.IdRef="Sequence_145">
+  <Sequence sap:VirtualizedContainerService.HintSize="838,3684" sap2010:WorkflowViewState.IdRef="Sequence_145">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Add FIle to Download List" sap:VirtualizedContainerService.HintSize="776,2682" sap2010:WorkflowViewState.IdRef="Sequence_141">
+    <Sequence DisplayName="Add FIle to Download List" sap:VirtualizedContainerService.HintSize="776,3596" sap2010:WorkflowViewState.IdRef="Sequence_141">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Mutasi Rekening Screen" sap:VirtualizedContainerService.HintSize="714,2571" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Mutasi Rekening Screen" sap:VirtualizedContainerService.HintSize="714,3485" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="680,2411" sap2010:WorkflowViewState.IdRef="Sequence_124">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="680,3285" sap2010:WorkflowViewState.IdRef="Sequence_124">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="618,2324" sap2010:WorkflowViewState.IdRef="Sequence_123">
+              <Sequence sap:VirtualizedContainerService.HintSize="618,3198" sap2010:WorkflowViewState.IdRef="Sequence_123">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -328,7 +328,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NClick>
-                <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="556,77" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+                <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="556,951" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
                   <uix:NCheckState.IfExists>
                     <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,669" sap2010:WorkflowViewState.IdRef="Sequence_116">
                       <sap:WorkflowViewStateService.ViewState>
@@ -346,7 +346,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:UpdateRowItem>
-                      <Throw Exception="[new InvalidDataException(&quot;Account Number is Not Registered&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      <Throw Exception="[new InvalidDataException(&quot;Account Number is Not Registered&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_4" />
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.IfNotExists>
@@ -363,8 +363,8 @@
                   </uix:NCheckState.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NCheckState>
