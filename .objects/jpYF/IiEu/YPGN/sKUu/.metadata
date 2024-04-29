@@ -1,0 +1,13 @@
+﻿{
+  "Name": "button_confirm_delete",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "sKUuHSkq7Eyj7z-y2F5HQw",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/sKUuHSkq7Eyj7z-y2F5HQw",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-29T06:46:07.2341779Z",
+  "Updated": "2024-04-29T06:46:07.2341779Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

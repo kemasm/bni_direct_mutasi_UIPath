@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="downloadFIle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="downloadFIle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="UiElement_Webpage" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="CurrentRow" Type="InArgument(sd:DataRow)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1367,3673</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1367,5543</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -49,6 +49,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -142,22 +143,24 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Download File &amp; Delete from Download List" sap:VirtualizedContainerService.HintSize="714,3608" sap2010:WorkflowViewState.IdRef="Sequence_148">
+  <Sequence DisplayName="Download File &amp; Delete from Download List" sap:VirtualizedContainerService.HintSize="714,5478" sap2010:WorkflowViewState.IdRef="Sequence_148">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_docStatus" />
+      <Variable x:TypeArguments="x:String" Name="str_docDetail" />
+      <Variable x:TypeArguments="s:DateTime" Name="datetime_start_wait_status" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="652,3520" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[UiElement_Webpage]" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="652,5390" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[UiElement_Webpage]" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,3320" sap2010:WorkflowViewState.IdRef="Sequence_131">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,5230" sap2010:WorkflowViewState.IdRef="Sequence_131">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -254,77 +257,125 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <Assign DisplayName="Initiate Doc Status" sap:VirtualizedContainerService.HintSize="556,122" sap2010:WorkflowViewState.IdRef="Assign_14">
+            <Assign sap:VirtualizedContainerService.HintSize="556,122" sap2010:WorkflowViewState.IdRef="Assign_16">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[str_docStatus]</OutArgument>
+                <OutArgument x:TypeArguments="s:DateTime">[datetime_start_wait_status]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">unassigned</InArgument>
+                <InArgument x:TypeArguments="s:DateTime">[System.DateTime.Now]</InArgument>
               </Assign.Value>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[str_docStatus &lt;&gt; &quot;Sukses&quot; AND str_docStatus &lt;&gt; &quot;Gagal&quot;]" DisplayName="Wait Until File Processed" sap:VirtualizedContainerService.HintSize="556,1369" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="100">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="Wait Until File Processed" sap:VirtualizedContainerService.HintSize="556,1487" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,1215" sap2010:WorkflowViewState.IdRef="Sequence_118">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="str_docDetail" />
-                  </Sequence.Variables>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,1333" sap2010:WorkflowViewState.IdRef="Sequence_118">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Refresh Download List Table" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearchRequest&amp;menuCode=MNU_GCME_180800" ContentHash="HTfpyRKZK0-yoNQrOK7Exg" CvElementArea="1466, 560, 66, 32" CvTextArea="1485, 570, 26, 12" CvTextArgument="Cari" CvType="Button" DesignTimeRectangle="1467, 562, 63, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' class='BNI-Button-General' aaname='Cari' check:text='Cari' /&gt;" Guid="8ba08ed8-38ec-4e3c-b4e8-705083ffcabd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAhCAYAAACC9hYiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKuSURBVGhD7ZhNS9xQFIb7V7rrf+heunZXKG5dta6ki9JCocV24Uq6EaFIpdgKLdiVSKUf4EqxCCJqSy0Wq9PBMfNhTExyvO8NydwkJzPqJGMSsniYSc5N5p53zldyo36wTSUupRgKlxNj4yvV370kbeweafdvkzZ0i7S7N7MD9oN9if1hn3K/nB8xXEyM5Y+uANwGsg6EEftn/QrRXYxXI/yP5Az4wfqnEC+GCDHt4R32xrlF+NMpdXgxIARyj7th3hF+xQnCilG4iAiDCGH8jopRkBrRDa6GBMVA12AuLCrhLhMQI7ft86qg7Sr+t8VA0eQuyBDWzx+kv37C2q6KWkzbYmCyZBb3ivFpkpxahZyTpsSu7pM+9Yhdex3ISTUsRhopYi7Nkv3/L7Wet+99+n6cnMYRtcaHA2uvDSVV2mIkPFe0xoaIDJ0aowMRGyID58HZ+ndyWpobOVrVF0l/84zsvS0yl+elDemBY5wP368nMHdExEj4ocv8MkfW1gpr84DjSCPv2IskfIfTEBNiePZUxBB+R8XgFvYA/nHA2TpBpiE/ZWRU9gK2VMQQRMVIODKMxRmyfq2zNo/m40GydtbcNKkfkX2wK1MCNimGcF5d37/ISLhmoB44zWO2UKJmoKhCLPPbB/88xHEaNXdNv8Rga0ZK3cSpHdLJxAP/nD79VPz7DdLfviDrz2agZqDTkGO76/olBtdN0pozpPPqnPFv158zEDXoINImUuVs9bOw/yZjYbpvYrBzRh4m0DTgJ1BBGqmSaZQUAQExyqdW5UBSvs8IUr7pUkExTXjuyAyYK5SiqcKLASBI0SIEEREjBIgXw6MgNYSrEWG6iwHQZfLadtE+Q10jjouJ4YEQw6QKYVBTEn646xnsB/uCAJgsO6QEx+XEKDilGD7bdA6OgB03KtcrQgAAAABJRU5ErkJggg==" InformativeScreenshot="be5076dfb091b709fe557c4cdde2b493.png" Reference="k3sD638TWkKWXUr3w00gUg/nwVkORVnzUeGZw9f4rIPEQ" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                    </uix:NClick.Target>
+                  <If sap2010:Annotation.AnnotationText="Skip current row if table not loaded or file still inprocessed within 10 minutes" Condition="[(Now - datetime_start_wait_status).TotalMinutes &gt; 10]" DisplayName="If Process is Past Time Limit" sap:VirtualizedContainerService.HintSize="456,149" sap2010:WorkflowViewState.IdRef="If_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then Skip Current Row" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_28" Row="[CurrentRow]" Value="[&quot;Gagal&quot;]" />
+                        <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_29" Row="[CurrentRow]" Value="[&quot;Daftar unduh laporan tidak terbuka.&quot;]" />
+                        <Throw Exception="[new TimeoutException(&quot;Table list download tidak tampil&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,722" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </uix:NClick>
-                  <uix:NCheckState DisplayName="Skip file if Table Not Loaded for 10 Minutes" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Timeout="600" Version="V3">
-                    <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_128">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,669" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                    <TryCatch.Try>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search Button" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Timeout="600" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearchRequest&amp;menuCode=MNU_GCME_180800" ContentHash="HTfpyRKZK0-yoNQrOK7Exg" CvElementArea="1466, 560, 66, 32" CvTextArea="1485, 570, 26, 12" CvTextArgument="Cari" CvType="Button" DesignTimeRectangle="1467, 562, 63, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' class='BNI-Button-General' aaname='Cari' check:text='Cari' /&gt;" Guid="8ba08ed8-38ec-4e3c-b4e8-705083ffcabd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAhCAYAAACC9hYiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKuSURBVGhD7ZhNS9xQFIb7V7rrf+heunZXKG5dta6ki9JCocV24Uq6EaFIpdgKLdiVSKUf4EqxCCJqSy0Wq9PBMfNhTExyvO8NydwkJzPqJGMSsniYSc5N5p53zldyo36wTSUupRgKlxNj4yvV370kbeweafdvkzZ0i7S7N7MD9oN9if1hn3K/nB8xXEyM5Y+uANwGsg6EEftn/QrRXYxXI/yP5Az4wfqnEC+GCDHt4R32xrlF+NMpdXgxIARyj7th3hF+xQnCilG4iAiDCGH8jopRkBrRDa6GBMVA12AuLCrhLhMQI7ft86qg7Sr+t8VA0eQuyBDWzx+kv37C2q6KWkzbYmCyZBb3ivFpkpxahZyTpsSu7pM+9Yhdex3ISTUsRhopYi7Nkv3/L7Wet+99+n6cnMYRtcaHA2uvDSVV2mIkPFe0xoaIDJ0aowMRGyID58HZ+ndyWpobOVrVF0l/84zsvS0yl+elDemBY5wP368nMHdExEj4ocv8MkfW1gpr84DjSCPv2IskfIfTEBNiePZUxBB+R8XgFvYA/nHA2TpBpiE/ZWRU9gK2VMQQRMVIODKMxRmyfq2zNo/m40GydtbcNKkfkX2wK1MCNimGcF5d37/ISLhmoB44zWO2UKJmoKhCLPPbB/88xHEaNXdNv8Rga0ZK3cSpHdLJxAP/nD79VPz7DdLfviDrz2agZqDTkGO76/olBtdN0pozpPPqnPFv158zEDXoINImUuVs9bOw/yZjYbpvYrBzRh4m0DTgJ1BBGqmSaZQUAQExyqdW5UBSvs8IUr7pUkExTXjuyAyYK5SiqcKLASBI0SIEEREjBIgXw6MgNYSrEWG6iwHQZfLadtE+Q10jjouJ4YEQw6QKYVBTEn646xnsB/uCAJgsO6QEx+XEKDilGD7bdA6OgB03KtcrQgAAAABJRU5ErkJggg==" InformativeScreenshot="be5076dfb091b709fe557c4cdde2b493.png" Reference="k3sD638TWkKWXUr3w00gUg/nwVkORVnzUeGZw9f4rIPEQ" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="Label 'label_tableHeader'" Mode="Appears" Retry="True" Timeout="10">
+                            <uix:VerifyExecutionOptions.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="Qp2s0swbrE6MUVmvnUiaJA" CvTextArea="715, 621, 178, 19" CvType="AnyWordGroup" DesignTimeRectangle="691, 607, 839, 44" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' /&gt;" Guid="44269b42-35b8-45c1-86f7-e1df4af3d5e7" InformativeScreenshot="df28f2f83ac52264385bdf9d0a391838.png" Reference="k3sD638TWkKWXUr3w00gUg/r6nOqftrd0SlQw4ARtLKjg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                            </uix:VerifyExecutionOptions.Target>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_20" Row="[CurrentRow]" Value="[&quot;Gagal&quot;]" />
-                        <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_21" Row="[CurrentRow]" Value="[&quot;Daftar unduh laporan tidak terbuka.&quot;]" />
-                        <Throw Exception="[new TimeoutException(&quot;Download list not shown after 10 minutes.&quot;)]" sap:VirtualizedContainerService.HintSize="388,115" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="Qp2s0swbrE6MUVmvnUiaJA" CvTextArea="715, 621, 178, 19" CvType="AnyWordGroup" DesignTimeRectangle="691, 607, 839, 44" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' /&gt;" Guid="44269b42-35b8-45c1-86f7-e1df4af3d5e7" InformativeScreenshot="df28f2f83ac52264385bdf9d0a391838.png" Reference="k3sD638TWkKWXUr3w00gUg/r6nOqftrd0SlQw4ARtLKjg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                    </uix:NCheckState.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NCheckState>
-                  <uix:NGetText DisplayName="Get Text 'Status'" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" TextString="[str_docStatus]" Version="V3">
+                      </uix:NClick>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,179" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap2010:Annotation.AnnotationText="Skip current row if table not loaded within 10 minutes" DisplayName="Skip Current Row" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="UpdateRowItem_30" Row="[CurrentRow]" Value="[&quot;Gagal&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:UpdateRowItem>
+                            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="UpdateRowItem_31" Row="[CurrentRow]" Value="[&quot;Daftar unduh laporan tidak terbuka.&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:UpdateRowItem>
+                            <Rethrow sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <uix:NGetText DisplayName="Get Status" sap:VirtualizedContainerService.HintSize="456,197" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" TextString="[str_docStatus]" Version="V3">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable CvTextArea="1336, 712, 46, 13" CvType="AnyWordGroup" DesignTimeRectangle="1337, 711, 45, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl idx='4' role='row' /&gt;&lt;ctrl name='Sukses' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='editable text' automationid='' /&gt;" Guid="5906dfb0-2dc4-4142-9055-d722230340f3" InformativeScreenshot="cacddb25b83d8b396e0c88f5e70e5785.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="AA" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -341,15 +392,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NGetText>
-                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_22" Row="[CurrentRow]" Value="[str_docStatus]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:UpdateRowItem>
-                  <uix:NGetText DisplayName="Get Text 'cell'" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" TextString="[str_docDetail]" Version="V3">
+                  <uix:NGetText DisplayName="Get Detail" sap:VirtualizedContainerService.HintSize="456,180" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" TextString="[str_docDetail]" Version="V3">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="1414, 703, 116, 51" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl idx='4' role='row' /&gt;&lt;ctrl idx='7' role='cell' /&gt;" FuzzySelectorArgument="&lt;ctrl name='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' role='application' /&gt;&lt;ctrl name='BNIDirect Id Pengguna : ROBOT' role='document' /&gt;&lt;ctrl name='https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=*' role='document' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl automationid='' role='cell' /&gt;" Guid="65c897f2-9b83-444a-a33c-5774d7ffe3f0" InformativeScreenshot="48619a9f7bf76d988de2209cd7a47530.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='BNIDirect Id Pengguna : ROBOT — Mozilla Firefox' /&gt;" SearchSteps="FuzzySelector" SelectionStrategy="AA" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -366,16 +409,11 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NGetText>
-                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="354,215" sap2010:WorkflowViewState.IdRef="UpdateRowItem_23" Row="[CurrentRow]" Value="[str_docDetail]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:UpdateRowItem>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Not (str_docStatus = &quot;Sukses&quot; OR str_docStatus = &quot;Gagal&quot;)" />
+              </ui:InterruptibleWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -383,6 +421,22 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleWhile>
+            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="556,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_22" Row="[CurrentRow]" Value="[str_docStatus]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:UpdateRowItem>
+            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="556,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_23" Row="[CurrentRow]" Value="[str_docDetail]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:UpdateRowItem>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Latest Item on Unduh Laporan Table" sap:VirtualizedContainerService.HintSize="556,197" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="GMrPovGj8EuQUAICtwlwWQ" CvElementArea="715, 710, 17, 17" CvType="CheckBox" DesignTimeRectangle="717, 712, 14, 14" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl parentid='downloadReportTab' tag='TABLE' /&gt;&lt;webctrl type='checkbox' tag='INPUT' class='' aaname='' /&gt;" Guid="e2c37ac8-c1e7-4c92-ad31-ba8a6f0fcf3a" InformativeScreenshot="9717303643adb54846a8504e44a0ab7e.png" Reference="k3sD638TWkKWXUr3w00gUg/LImBYe_44kWkX_rCTYcjmg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
@@ -401,22 +455,54 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <If Condition="[str_docStatus.Contains(&quot;Sukses&quot;)]" DisplayName="Download Latest Item Report If Process Succees" sap:VirtualizedContainerService.HintSize="556,92" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[str_docStatus.Contains(&quot;Sukses&quot;)]" DisplayName="Download Latest Item Report If Process Succees" sap:VirtualizedContainerService.HintSize="556,1420" sap2010:WorkflowViewState.IdRef="If_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="then Download File" sap:VirtualizedContainerService.HintSize="416,812" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                <Sequence DisplayName="then Download File" sap:VirtualizedContainerService.HintSize="512,1164" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="bool_is_file_previously_downloaded" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                  <If Condition="[System.IO.File.Exists(CurrentRow.Item(&quot;File Path&quot;).ToString)]" DisplayName="Delete Previously Existing Downloaded File" sap:VirtualizedContainerService.HintSize="450,444" sap2010:WorkflowViewState.IdRef="If_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="Sequence_163">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[CurrentRow.Item(&quot;File Path&quot;).ToString]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_164">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="450,197" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="IXtHC1CSpkqeJ6KTOAjQtA" CvElementArea="1360, 823, 85, 32" CvTextArea="1382, 832, 42, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1363, 825, 81, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='buttonDownloadList' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='buttonDownloadList' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="31bc5a04-a073-4373-91ec-bb8238119997" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAhCAYAAACoRueNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARkSURBVGhD7ZpLT1NBFMf7VVzJV1D3ytqVGOULKLJCFsaFCVFZuPERY2JiopGgJhpNDGKUQniKPEsLLQVaaGkL2Dcgr/Y4/7lMvbc9bamtpNpL8st9zMzpnT9nzp05cy2J0DzlIxlyS2IBF4X9sxT02MjjGqfFuTEKiPNowEnxoItt+yesee205ByT9v2L07Sx4qDoqlM8g3iWNTfbppqATnjeIqJqaILOkG9hirzzE7QsWF+2s23KIaQTNbBkE787Jx70UNSsutVMQVElQeFBQkAI6fvWRWvP2yjcdpFiV09TvLGO4g0n/j/Qr6YzFL9ziRKv2inh6OO1yUKNqIKiYmhjiIesnbR+6wL/ALUCBB56x+qkgKib+URFIQTFsI/cb+J/pEZJPGrO0UsPtMsRVblwbKaXoi3nWMM1T2t9wZBgEBWC4hi392oxkzNooiFibj5hM6IqD8Wwj12v5w2ZGIHHHuqnRyeqWwbZ2MNm3oAJCxdjjaIOv2MbmhRGzQrUaDcMf0wbuEYmRcB0S4kqnNOiXk5Rm5VvUIXs9XTSvq2fLcsm5XPRzxdtbFklwUtLvo/EvN4i19Ri1RTpuM1WLgd0PF/n0VmIw5UVoxpFjXe2y3X/D98sPFV742PpyVYug1oSNSL0w3I+5J3Rhj+WotErp9jK5XBUUXG+8/oeHXgdlN6KE+3+NAgOG7iHMtTZ632Tscv9c/RCyvOOu5QKLGVs77y9b6hfCaDfinuS/ItTZEG6akO4bKzxJFu5HEoRNZ2M0PaDa/IaIqQTEXm+/72bUkEPJVvOamVPb8i6pYia2vBnbEPQdGzDUL8SQD8knZCytCCHiZQeV7FcShF1t+uZoTy9vakdhbjbT1oNZaV6arZt2ts1XFcKpENlTF0WLjvvGP0rnro39CG/qKsLmWGoF0GhPBV/+vsAIpYiaj7bFaWxTk6pZJYKSWe3EPVvxFR0JrXuy7mPoYzYpoZ0oY6znqoT9cA1liuq+M1jF7XpzO95KrZHFma/i7d/A1+5TKQnjXzMXEPIA4/d4MGFOg5vR0zdvHleXuOYjq5l2qMc9lS7/fGvMmYeu6iHCwAgPdXrmqDwy8rPU4EUUYSY9M6WjJM4ouP6OsU6jhiq2sMLd94/lsKiDPZT4aBWnoxq8XaiR4Ly4xJV7hAoUfGSwoZeeNrYUZPS0KcBLXKDDVMq7Izeucw2MCmCbuhLUTENkIKKVVVyyMxS/QnZe1eWiH9OvrFUYgX5Qa6hCQ+bT9X21XWiCpDR5gyYZJEv849hn1OANBb2vTlDJhpH2aPKAcKaHstTym4qixljDRTb9weZzH9BMCuo9a0WTJuKfKGiKO6peuDyYuUgBUbMNb+lYilN1COisjUKTNuwHLZNDtLoiJX6+j5Tj/VTXr4NW2nJOS4/TVQv0iONqCqhYqKi04Zp2eEmGD6HDHlm5CeS9qkhGhvto8GBL1JYa2+3QUzcGxBlk+P9tCKWz8om9tH+HVHn6RfCKVKBM7H4KwAAAABJRU5ErkJggg==" InformativeScreenshot="07c53e8ee4cff64d550bd2052b1bb29c.png" Reference="k3sD638TWkKWXUr3w00gUg/Dgv1H7cBb0GfbOTOYFWhLg" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -427,9 +513,15 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'DOWNLOAD_REPORT_2103202…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,258" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Text="[CurrentRow.Item(&quot;File Path&quot;).ToString]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DOWNLOAD_REPORT_2103202…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Text="[CurrentRow.Item(&quot;File Path&quot;).ToString]" Version="V3">
                     <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable CvElementArea="128, 425, 821, 24" CvType="InputBox" DesignTimeRectangle="136, 429, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="7540bfdc-e2e5-4ebe-be67-20d1d0fb1db3" InformativeScreenshot="b0111e1b99bdea6248fd1ec3e0e5501d.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                      <uix:TargetAnchorable CvElementArea="128, 425, 821, 25" CvType="InputBox" DesignTimeRectangle="136, 429, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="eaefdba0-314c-4b16-9bfc-bf72b5227ffa" InformativeScreenshot="ec5978c012eb1f3a86eebccb813cca9b.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="73, 431, 55, 12" CvTextArgument="File name:" CvType="Text" DesignTimeRectangle="18, 426, 115, 23" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Details Pane' role='pane' /&gt;&lt;ctrl name='File name:' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Details Pane' role='pane' /&gt;&lt;ctrl name='File name:' role='text' automationid='' check:text='File name:' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -438,9 +530,9 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="450,180" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable CvElementArea="747, 494, 88, 26" CvTextArea="778, 500, 26, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="747, 494, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="015bf530-c7f9-4cbc-9325-c3417991a77e" InformativeScreenshot="aad10341e5e0cae5a9bda3d6363ca0ca.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                      <uix:TargetAnchorable CvElementArea="747, 494, 89, 27" CvTextArea="778, 500, 26, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="747, 494, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="6bb78bd5-4595-48d9-b982-8f0920e2ee29" InformativeScreenshot="62ef27653e93958699580ac6325f9f56.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive" />
                     </uix:NClick.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -449,53 +541,6 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'element_overwrite'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="354,75" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
-                    <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_149">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'button_yesOverwrite'" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" Version="V3">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable ContentHash="TjVU99YHrU-1pijL27d4uQ" CvElementArea="206, 100, 68, 23" CvTextArea="229, 105, 20, 12" CvTextArgument="Yes" CvType="Button" DesignTimeRectangle="206, 100, 68, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Yes' cls='Button' title='&amp;amp;Yes' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Yes' cls='Button' title='&amp;amp;Yes' check:text='&amp;amp;Yes' /&gt;" Guid="9db31834-b57e-4e96-b558-3e0dcaeec9ca" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAbCAYAAADf98keAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVFhH7ZhBioQwEEVzLQ+U8+Q0bhRvoCCuJAdQFBeuFanxRx0SY+tmeiIki7foomyoxy/BYuM4UuAzQdADQdADlqBhGKiua6qqisqy9AYppZr97MMQhAaIaduW5nmmZVm8ALN2XadmP0syBMFi3/eXf+IDTdOo7dGdGIIQtWmaLh/2AcyOFOlOLEFXD/oEHOhOgqATTgXFnFEkpFmPOTEemzWHuE2QFBQxTvFvTZKIIhJS63GMW0ErRopelh7gXJBKUSRIqvQw4rFWZ4yY4kjZ1rPVtN4v4l7QClLExSEKtZg401ZtTZZKmYOEvUKQGlxPhJGeHYjZ69aL/Yu8Q9A5MdbL20SKyK8VswSp3/dJgaT/SNJLBa2c1wwrtq/ixueE/SUvEfRegqAHbgXhS9b3r/lbQbiF4CZy9bAP4GiGm5juxBB0XBTR6FOSMCuC8XhRBGgoioLSNKUkSbwgyzLK89ySAyxBAZMg6IEg6JaRfgD52Nu9axBCBAAAAABJRU5ErkJggg==" InformativeScreenshot="07aa097615a6bf4494ce2f97c2feeff6.png" Reference="k3sD638TWkKWXUr3w00gUg/jxeUa5d7kka2EH3mrKxCcw" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Confirm Save As' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
-                                  <uix:Target CvTextArea="15, 9, 89, 12" CvTextArgument="Confirm Save As" CvType="Text" DesignTimeRectangle="15, 9, 89, 12" ElementType="Text" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                  <uix:Target CvElementArea="18, 39, 32, 33" CvType="Icon" DesignTimeRectangle="16, 39, 36, 36" ElementType="Icon" FullSelectorArgument="&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='MainInstructionIcon' role='graphic' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='MainInstructionIcon' role='graphic' automationid='' check:text='MainInstructionIcon' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASQSURBVFhH7VZbT1xVGJ0zh5m+ahOQSiA4lEBGSTTpL7Dpg/4N4//Q+AfqpbUvGmqi1oA1SA3CgFykBcqlV3tBLqMdmAEsTJuBYVD3cn177zMwzgxz4cHG9EtW1nf2ObPX+tbsw+DDM1bPDZWq/5+h3fhZJOeOY2v2ONKx9+xq9XUkQ5n1i0hO+/H3kg9/LfjwZMaPNNeOUkcylJx7BXsPHCgawrKDvfsOtmZC9m51VbWh9Fonns64UIvcYpGmFgRMacpFOtFpn6q8qja0NR3Cn/do4leBz2Deh8xdB5sT1adUlSFJ4Okk06EBNU9Dwg+5lfQPHSSv8iytVpdSVYa2mMDeHSOuHvjw1pkw3ibUfRojMjcdbIxVl1LFhtJxvlnjTIdGIAeaBjo6OojXADF0z2BrxMX2o8pTqtjQH+MhZG7QiBUGz9Gr4TDChLrLNcEvTGmWKQ2ftJ8qvyoylF7pRHKU6VBQwxpob29He1sb1B1ey1d5m9uSNweZ0u+VpVSRoY0RpsPJxQT4NokBEW5tbdUQI+q2A2gwpesO1gcqO0tlG0rHLmJzyNVCYsKIGrS0hBAKhaBu8h4PNG7R7A2aIx73uUhFy0+pbENyHjJTFLpFIQ/WQHNzswa0CRqyZsB+95qDtcgpu0vpKsuQnIPNAZ4dGjCTi6iBmvOhqakJjY2NuldzXCfULLfm1wvyRq/L370Ru9vhVZah9UgLMpNG3AOERZTc0NCgIQbUjDGipsmEcHqMZ2noTbvb4VXS0Da//8d9NXZaDxQSYUIET5yoR339S7pX1wV8hoxpw2qKKX3H37h46ZRKGlrvC2Fn1E9xbk4Bb3LvWgTr6upQW1vLft+A7nnmNCZ92B2WN+603bV4HWootdyJxGW+WVrYiGUhohoO3gi/iNfDL0BRGPxqBWqCxiwwwbVrPqx1udhZPTwlPl281npPYnuI6WgzFBFBO7EnLH1WVJjCithnrl8VMKWIg3jfGbt74eInCldqkel08+xkhUXQgxgwomZ6A0VRETYGiHH24+SfyRaJr2uws1I8JT5VuBI9TCfCdKwJb2ozMZmCxoAIe+IexISAvcdjAgfpfj/iV4qfJT6VX5JO/FJACyobd87UwhRRRLTbQVvzMY1oF9e1MDEqzGuykn6U/Yjh1S9qsB0rnBKfyK/4t0znR6bjTXsw9mwv7OCDd10Eg0EEAgG8/w4/4xkZEdCMYJhrB7Dzgx+rPYVT4hO5lZpnOl/x7HgGrHDO5Fk4iH7D37IGFy0vu1i+xDW+3mJG/cQ+B1wfIlusfM6UHuWnxLu5leg5hdQVv4mZk2bjFrZTa+ak+5PzuqgBYYtBXkeIQQc73/sRu5yfEu/m1m+fBYwBLUyIoEwsojnCplciqnvCE/VYg72Y4CuPAXIWDhY+DFrV/eKd3JI3INnNP4Y5BixnJyZ7YgdZCxM5wh74TD+5X5j/vH3pItZVRkJ7T6JI9J5G9EIAyxeCWP40wF6YOB/A0rkgls4T545h6ZMgFj8WcN3rPwrqyfNw1sJeixnR+nflGfqv67mhUvWMGQL+AXUgsP71XRtcAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NClick.Target>
-                        </uix:NClick>
-                      </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_150">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <uix:NCheckState.Target>
-                      <uix:TargetAnchorable ContentHash="RwtQmMxzl02j48FKwo5ESg" CvTextArea="15, 9, 89, 12" CvTextArgument="Confirm Save As" CvType="Text" DesignTimeRectangle="15, 9, 89, 12" DesignTimeScaleFactor="1" ElementType="Text" Guid="5885993f-8b09-474e-b04e-88727ca0525b" InformativeScreenshot="35a07bd2727ed07dc7dd38a722f01191.png" Reference="k3sD638TWkKWXUr3w00gUg/q7oFiiVtB0uRSIVFiinklw" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='#32770' title='Confirm Save As' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V3" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CvElementArea="18, 39, 32, 33" CvType="Icon" DesignTimeRectangle="16, 39, 36, 36" ElementType="Icon" FullSelectorArgument="&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='MainInstructionIcon' role='graphic' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='MainInstructionIcon' role='graphic' automationid='' check:text='MainInstructionIcon' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASQSURBVFhH7VZbT1xVGJ0zh5m+ahOQSiA4lEBGSTTpL7Dpg/4N4//Q+AfqpbUvGmqi1oA1SA3CgFykBcqlV3tBLqMdmAEsTJuBYVD3cn177zMwzgxz4cHG9EtW1nf2ObPX+tbsw+DDM1bPDZWq/5+h3fhZJOeOY2v2ONKx9+xq9XUkQ5n1i0hO+/H3kg9/LfjwZMaPNNeOUkcylJx7BXsPHCgawrKDvfsOtmZC9m51VbWh9Fonns64UIvcYpGmFgRMacpFOtFpn6q8qja0NR3Cn/do4leBz2Deh8xdB5sT1adUlSFJ4Okk06EBNU9Dwg+5lfQPHSSv8iytVpdSVYa2mMDeHSOuHvjw1pkw3ibUfRojMjcdbIxVl1LFhtJxvlnjTIdGIAeaBjo6OojXADF0z2BrxMX2o8pTqtjQH+MhZG7QiBUGz9Gr4TDChLrLNcEvTGmWKQ2ftJ8qvyoylF7pRHKU6VBQwxpob29He1sb1B1ey1d5m9uSNweZ0u+VpVSRoY0RpsPJxQT4NokBEW5tbdUQI+q2A2gwpesO1gcqO0tlG0rHLmJzyNVCYsKIGrS0hBAKhaBu8h4PNG7R7A2aIx73uUhFy0+pbENyHjJTFLpFIQ/WQHNzswa0CRqyZsB+95qDtcgpu0vpKsuQnIPNAZ4dGjCTi6iBmvOhqakJjY2NuldzXCfULLfm1wvyRq/L370Ru9vhVZah9UgLMpNG3AOERZTc0NCgIQbUjDGipsmEcHqMZ2noTbvb4VXS0Da//8d9NXZaDxQSYUIET5yoR339S7pX1wV8hoxpw2qKKX3H37h46ZRKGlrvC2Fn1E9xbk4Bb3LvWgTr6upQW1vLft+A7nnmNCZ92B2WN+603bV4HWootdyJxGW+WVrYiGUhohoO3gi/iNfDL0BRGPxqBWqCxiwwwbVrPqx1udhZPTwlPl281npPYnuI6WgzFBFBO7EnLH1WVJjCithnrl8VMKWIg3jfGbt74eInCldqkel08+xkhUXQgxgwomZ6A0VRETYGiHH24+SfyRaJr2uws1I8JT5VuBI9TCfCdKwJb2ozMZmCxoAIe+IexISAvcdjAgfpfj/iV4qfJT6VX5JO/FJACyobd87UwhRRRLTbQVvzMY1oF9e1MDEqzGuykn6U/Yjh1S9qsB0rnBKfyK/4t0znR6bjTXsw9mwv7OCDd10Eg0EEAgG8/w4/4xkZEdCMYJhrB7Dzgx+rPYVT4hO5lZpnOl/x7HgGrHDO5Fk4iH7D37IGFy0vu1i+xDW+3mJG/cQ+B1wfIlusfM6UHuWnxLu5leg5hdQVv4mZk2bjFrZTa+ak+5PzuqgBYYtBXkeIQQc73/sRu5yfEu/m1m+fBYwBLUyIoEwsojnCplciqnvCE/VYg72Y4CuPAXIWDhY+DFrV/eKd3JI3INnNP4Y5BixnJyZ7YgdZCxM5wh74TD+5X5j/vH3pItZVRkJ7T6JI9J5G9EIAyxeCWP40wF6YOB/A0rkgls4T545h6ZMgFj8WcN3rPwrqyfNw1sJeixnR+nflGfqv67mhUvWMGQL+AXUgsP71XRtcAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NCheckState.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NCheckState>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -509,7 +554,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Remove Latest Item After Download" sap:VirtualizedContainerService.HintSize="556,197" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Remove Latest Item From List" sap:VirtualizedContainerService.HintSize="556,197" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55cafd6b-88fc-49d0-8484-e90be181136f" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearch" ContentHash="VNBsntO9V06tSD0lkZDUYw" CvElementArea="1450, 823, 82, 32" CvTextArea="1471, 833, 40, 15" CvTextArgument="Hapus" CvType="Button" DesignTimeRectangle="1452, 825, 78, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='BNI-Button-No' name='buttonDownloadList' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='BNI-Button-No' name='buttonDownloadList' tag='INPUT' type='button' aaname='Hapus' check:text='Hapus' /&gt;" Guid="e5affc77-997a-4bc1-becc-9baa4fda0afb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAhCAYAAABKmvz0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYPSURBVGhD7ZrLT1RXHMfvrvwTxXZtnzvTxKSPSBpWbpqGhLjoRhMbk5rGJnVHTYxx1RhlJ6kxaNwY6qIWS0IDwgDCMC+YF/NkZnjLYxAFvb/+vr/LuXNn5gxoBwRhFt/M3PM+n/M7j3vuz5hPj9FiNkgrU2FamY7QMv86hfA8hy9MjtPkhIcmxp9QLPiE4qFhysa8Eo40pfmcUmUooR6V52kmSGjDTNJP2biX0tFRSoRHpJ7o+BBFx4bkfyI0QumImzIxD00lfDSTCtA81438T7n96MNSLmTXp+Rsx5sK5U3FfRTyD5B7uIfGvP3SHrQB9Tr7YeS48XPcETzoQKIwNBIdRQfDgUH5BcRZ7sxiNmQXWLEDOVVOSBoA+KgT+acZCgBmeJAAMRl2M7Rhe7CgFAByPDo1kwTAMSmnCJwaoFI52/GmAkhuX8g/KCC97scU8PRLm8DDOXgGApEYmVCxKkQ1biEzTtOcaZI7mXrUQTO//ESrDV/T+gf19LKujl4ZxsEQ92XjwyO03niC1n67SCuuf6TvMJgQG8/oSC95NgULxaADprJMAxaG0UaAPRJKbEliNXfbKH/iK30DDrDWvv1G+h7h6ez39JGPLRIgx7wuWXYAE3zASUAmearCKjFlxFQ5AtMP02jlVJO2ksOkxebvZTrHgsOyXkcCQxT0DQhgBdOAmWI9wjoEmGrtme95SGuffqQt+DDqxWcfCxNM5zhvfP7RPlkzARPLngGAoA3SSf6PxX+h9296caReW+Bh1gbvC4t9nbJugheMEBsRYBrYPQETpirTnP/XLLGy1j//RJbAHJ8gcHoJMkxYpoGpjADPyGPysuabvtMWUFNBz39olj0ExzGsmzgSGbPpgCyeg65u8rX+rs1YU7lWOtoFphwN+dTDB3KfEO3peUTTx7/QZqqpXOuNDfaBH5uzMcE79iif2gfv/qHNUFNlrQ502W9Oho+3cUzryI9ntImrEc3OasPNzk6RLu5d0lrLr2KVuD+QcyR2nfkvj2sTV6ODDhKvk+pV2sBhEufI5/XvaxNXo9cBaZ47R5TJEC0vE+XzZN6/b6cjv5/Mq1eJcrlC/I0bhXgu3zx/3n5WYfL/6FEit9vKB0UiZJ48WZS2WuHdXL1OyzkSh/CXde9pE1ej1wJ5/Tq9OnbMikPnp6bIvHJFngGSEgk7HiAkvqXFit8CJAbE7Oqyw82mJjIvXLCfd0R1dQWQuArCNq5NWKXQKUqny8UWUmlqC4DNOLHIks6bly9LuMRvBfL2baLubhkcZ/xOywapLltBV5ewGqlOlarIItXUZUujuTlrCjpBloCCdapytwIJmZcu2VZt3ru381CdFilnIRbmuzZxFdoOpNncbKVRUxtx7e3FIDensR3PzxSNWvH8WwQSSwNbu/3skHnrFpHLpY37vypaI9Uf7EC6xNVoW5BnzxLF4wVLAQjAc4CkWKywScAasUa2tlrxvb1kPnhQyMugVJ1mW5usixK3+UxDQ/bzTgjMykDiTKRLXI22Ayn/eU3Ebiw7K0M1b94kymYlTqBiTQyFrPhnzwSIXQ42n6UlKw6AkZZ3avPaNTJPnyZKpaw4lM/Lx07v2mBWBjLPp3Rd4r2UgCxdI/eRwKwMJLQb07sa7WeQzmkNFYHMd9zRZtor7WeQYOVkVwQSwl2bLmNNBYFRKbcykBBugXUF1GTdkOuYaUFiEd2Nc+W7LjBxbjBOaUFCyFCzzILAohJEqCJIpdqaqV8TS7UtSNy3rf55hzYaG7SVHGThiFO6O1fSliDlGj0XFucn8Rj79y9auPizuK/g/nI3rt72TE7fH35j2Woa61QRJCDiVmgJECctZyJ8CMdtOj5PwNMA38LxoVx5acDpaCETFG8NXM9ZsrzZEAYhjdyBJovd+FA2PsKhfPjZwL8mxXFIr26h0a65dEDc6uBmA/+beNByAkM9GPRSt8G3pYoglQseXDTwuRENBjgAHPe5pOPwWUQcoOBOE/lUp7XaLBtf3VC28ovE92EMBnwPUXbA2y/1RHmQpPyEX/xroCxDBHi4/uF3cmJUBkZXz9tTmP4DYIbtrhW9jVQAAAAASUVORK5CYII=" InformativeScreenshot="a8ee77b26f088b8923e29b7cdd69d845.png" Reference="k3sD638TWkKWXUr3w00gUg/wvjknQaxvkGc8t6NEjAKug" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
               </uix:NClick.Target>
