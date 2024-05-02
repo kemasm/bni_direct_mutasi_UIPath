@@ -1,9 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="feedDownloadList" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="UiElement_Webpage" Type="InOutArgument(ui:UiElement)" />
-    <x:Property Name="CurrentRow" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="DataRow_Row" Type="InArgument(sd:DataRow)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1367,3024</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1061,2928</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,6 +62,7 @@
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
@@ -83,6 +84,8 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
@@ -97,12 +100,16 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
@@ -111,12 +118,10 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.Presentations.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Presentations.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
@@ -125,15 +130,6 @@
       <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
-      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
-      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -141,33 +137,33 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Add FIle to Download List" sap:VirtualizedContainerService.HintSize="714,2959" sap2010:WorkflowViewState.IdRef="Sequence_145">
+  <Sequence DisplayName="Add FIle to Download List" sap:VirtualizedContainerService.HintSize="714,2863" sap2010:WorkflowViewState.IdRef="Sequence_145">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Mutasi Rekening Screen" sap:VirtualizedContainerService.HintSize="652,2871" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Mutasi Rekening Screen" sap:VirtualizedContainerService.HintSize="652,2775" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,2711" sap2010:WorkflowViewState.IdRef="Sequence_124">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,2615" sap2010:WorkflowViewState.IdRef="Sequence_124">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="556,901" sap2010:WorkflowViewState.IdRef="Sequence_142">
+            <Sequence DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="556,861" sap2010:WorkflowViewState.IdRef="Sequence_142">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NCheckState DisplayName="Click Mutasi Rekening Link" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,561" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+              <uix:NCheckState DisplayName="Click Mutasi Rekening Link" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,521" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
                 <uix:NCheckState.IfExists>
                   <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_120">
                     <sap:WorkflowViewStateService.ViewState>
@@ -234,7 +230,7 @@
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
             </Sequence>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="True" DisplayName="Type No Rekening" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="556,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Text="[CurrentRow.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="True" DisplayName="Type No Rekening" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="556,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Text="[DataRow_Row.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" ContentHash="q1F0D9ZRCkqxTSDxixQ2rQ" CvElementArea="1054, 545, 206, 35" CvType="InputBox" DesignTimeRectangle="1057, 547, 201, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' class='picklist-form-control' aaname='' /&gt;" Guid="007b6c4b-c74d-43b0-bf4a-30db54da03c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAkCAYAAAAq974jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJKSURBVHhe7d29bhNBGIVh7oU74EoQHQ0dVQSiJ3I6OhroLIWKFNBTUNEjcQEUtDSWEAE2gKIw5B3vbmbtmfVOae/7SCvlT0lzjuz5ZnZzK0iqYmmkStWlufz4Ply8WoSfx/fC+cM74fv9215ee3WRW/JLjslzrUml+dech99vnsc/9uvZg/Dn3Wm4/PwpXP341v6EtD/ILfklx+SZXJNvcj7FztL8/fA2/tKL00W4+vql/ap0OMg1+Sbn5H2X0dLEt2FP78ZWSoeOnJN3cj+mWJrm5ZPQvHjcfibNB7kn/yXZ0tA0C6M5I/+lV5yt0vCejpcoae7oQW6NMygN0wMWQ65hpPUahz5sTtUGpWHsxhRB0hp9oBepQWlolWNl6QZ9oBepvjTsjLLRI2mIXqQnB/rSMClgh1TSEL1IJ2l9aTiL4wBA2hY3Pa/70elLE9czniWTttCLdF3Tl4bTn5Ly0n5YGmkCSyNVsjRSpWxpHARIecVBgCNnKa84cnZzU8orbm56jEbKKx6jQVzXeGBT6o0e2IS3BkhDO28N8CY06QY9oA+jN6HB252ltUm3O3eYFPhgDc1Z1YM1Oj7CSXNF7qsf4dShabxEucbRHMRNzOu8l15hOqOlAe/pWAwxRXAcrUNErsk3Oc+tYTbtLA2YHjB245ey0cMOKa30rJr2Ebklv+SYPJNr8r05JSuZVJoUO6Pxbdux/2rDaz8vckt+yXG60z9VdWlSq9Wq/Uiaj+rSNE0TlstleHR0FK+TxUl4fXbWflc6dCH8BwHOMH5tjk+3AAAAAElFTkSuQmCC" InformativeScreenshot="456198b656be5f8702287a2f504e8f14.png" Reference="k3sD638TWkKWXUr3w00gUg/-DSF8oEzZEOehgJFv2bK5g" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -251,7 +247,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NSelectItem DisplayName="Select Format File" sap:VirtualizedContainerService.HintSize="556,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[CurrentRow.Item(&quot;File Type&quot;).ToString]" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+            <uix:NSelectItem DisplayName="Select Format File" sap:VirtualizedContainerService.HintSize="556,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[DataRow_Row.Item(&quot;File Type&quot;).ToString]" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
               <uix:NSelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="7">
                   <x:String></x:String>
@@ -298,17 +294,17 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="556,951" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="556,895" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1c7e9dcf-73cc-425a-a0da-a7fe68992333" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,669" sap2010:WorkflowViewState.IdRef="Sequence_116">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,653" sap2010:WorkflowViewState.IdRef="Sequence_116">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_18" Row="[CurrentRow]" Value="[&quot;Gagal&quot;]" />
-                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="UpdateRowItem_19" Row="[CurrentRow]" Value="[&quot;No Rekening Tidak Ditemukan&quot;]">
+                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,224" sap2010:WorkflowViewState.IdRef="UpdateRowItem_18" Row="[DataRow_Row]" Value="[&quot;Gagal&quot;]" />
+                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,224" sap2010:WorkflowViewState.IdRef="UpdateRowItem_19" Row="[DataRow_Row]" Value="[&quot;No Rekening Tidak Ditemukan&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
