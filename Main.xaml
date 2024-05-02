@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="1061,4916" sap2010:WorkflowViewState.IdRef="test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="957,5188" sap2010:WorkflowViewState.IdRef="test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -142,8 +142,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
@@ -154,7 +152,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="714,4683" sap2010:WorkflowViewState.IdRef="Sequence_41">
+  <Sequence sap:VirtualizedContainerService.HintSize="714,5123" sap2010:WorkflowViewState.IdRef="Sequence_41">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_output_dir_path" />
       <Variable x:TypeArguments="x:String" Name="str_output_file_path" />
@@ -164,6 +162,26 @@
       <Variable x:TypeArguments="sd:DataTable" Name="DT_UnprocessedRows" />
       <Variable x:TypeArguments="ui:UiElement" Name="UiElement_Webpage" />
       <Variable x:TypeArguments="x:Int32" Name="int_index" />
+      <Variable x:TypeArguments="x:String" Name="STR_OUTPUT_FILE_NAME">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">output.csv</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="STR_INPUT_FILE_NAME">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">input.test.csv</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="STR_FTP_INPUT_FILE_PATH">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">/INPUT/input.csv</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="BOOL_IS_DEVELOPMENT">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" Value="True" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -193,7 +211,7 @@
           <OutArgument x:TypeArguments="x:String">[str_output_dir_path]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[Path.Join(str_output_dir_path, Datetime.Now.ToString("yyMMdd"))]</InArgument>
+          <InArgument x:TypeArguments="x:String">[Path.Join(str_output_dir_path, Datetime.Now.ToString("yyyyMMdd"))]</InArgument>
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -223,7 +241,7 @@
           <OutArgument x:TypeArguments="x:String">[str_output_file_path]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[Path.Join(str_output_dir_path, str_OUTPUT_FILE_NAME)]</InArgument>
+          <InArgument x:TypeArguments="x:String">[Path.Join(str_output_dir_path, STR_OUTPUT_FILE_NAME)]</InArgument>
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -251,24 +269,33 @@
           <InArgument x:TypeArguments="x:String" x:Key="str_output_dir_path">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_output_dir_path" />
           </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="str_input_file_name">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="STR_INPUT_FILE_NAME" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="bool_is_development">
+            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BOOL_IS_DEVELOPMENT" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="str_ftp_input_file_path">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="STR_FTP_INPUT_FILE_PATH" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="652,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Library\Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\Login2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="652,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Library\Login2.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Output">[UiElement_Webpage]</OutArgument>
+        <OutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ClearDownloadLIst.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="652,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Library\ClearDownloadLIst.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\ClearDownloadList2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="652,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Library\ClearDownloadList2.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Split Output File" sap:VirtualizedContainerService.HintSize="652,57" sap2010:WorkflowViewState.IdRef="Sequence_180">
+    <Sequence DisplayName="Split Output File" sap:VirtualizedContainerService.HintSize="652,497" sap2010:WorkflowViewState.IdRef="Sequence_180">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:FilterDataTable DataTable="[DT_OutputFile]" DisplayName="Create Processed Rows DataTable" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_ProcessedRows]" SelectColumnsMode="Remove">
@@ -379,17 +406,13 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\FeedDownloadList2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Library\FeedDownloadList2.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\FeedDownloadList3.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Library\FeedDownloadList3.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">
-                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="UiElement_Webpage" />
-                            </InOutArgument>
-                            <InArgument x:TypeArguments="sd:DataRow" x:Key="DataRow_Row">
-                              <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="CurrentRow" />
-                            </InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
+                            <InArgument x:TypeArguments="sd:DataRow" x:Key="DataRow_Row">[CurrentRow]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\DownloadFile2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Library\DownloadFile2.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\DownloadFile3.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Library\DownloadFile3.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">
                               <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="UiElement_Webpage" />
@@ -452,16 +475,10 @@
                     <TryCatch.Finally>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sequences\SendMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\SendMail.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="sd:DataRow" x:Key="DataRow_Row">
-                            <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="CurrentRow" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="str_output_dir_path">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_output_dir_path" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="DataRow_Row">[CurrentRow]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="str_output_dir_path">[str_output_dir_path]</InArgument>
                           <OutArgument x:TypeArguments="x:Boolean" x:Key="bool_success" />
-                          <InArgument x:TypeArguments="x:Boolean" x:Key="bool_has_attachment">
-                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="CurrentRow.Item(&quot;Status&quot;).ToString = &quot;Sukses&quot;" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="bool_has_attachment">[CurrentRow.Item("Status").ToString = "Sukses"]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -514,20 +531,14 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateOutputFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\CreateOutputFile.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_ProcessedRows">
-                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_ProcessedRows" />
-                  </InOutArgument>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_UnprocessedRows">
-                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_UnprocessedRows" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="str_output_file_path">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_output_file_path" />
-                  </InArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_ProcessedRows">[DT_ProcessedRows]</InOutArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_UnprocessedRows">[DT_UnprocessedRows]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="str_output_file_path">[str_output_file_path]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logout.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Library\Logout.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\Logout2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Library\Logout2.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Input">[UiElement_Webpage]</InArgument>
+                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <Rethrow sap2010:Annotation.AnnotationText="Rethrow the exception, forcefully stop the process" sap:VirtualizedContainerService.HintSize="354,79" sap2010:WorkflowViewState.IdRef="Rethrow_1">
@@ -550,20 +561,14 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateOutputFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\CreateOutputFile.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_ProcessedRows">
-                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_ProcessedRows" />
-              </InOutArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_UnprocessedRows">
-                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_UnprocessedRows" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="str_output_file_path">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_output_file_path" />
-              </InArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_ProcessedRows">[DT_ProcessedRows]</InOutArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_UnprocessedRows">[DT_UnprocessedRows]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="str_output_file_path">[str_output_file_path]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logout.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Library\Logout.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\Logout2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Library\Logout2.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Input">[UiElement_Webpage]</InArgument>
+              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

@@ -4,12 +4,11 @@
   "description": "Blank Task",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.23.2-preview]",
+    "UiPath.Excel.Activities": "[2.22.3]",
     "UiPath.FTP.Activities": "[2.3.0]",
     "UiPath.Mail.Activities": "[1.22.1]",
-    "UiPath.System.Activities": "[24.3.0]",
-    "UiPath.UIAutomation.Activities": "[24.2.0-preview]",
-    "UiPath.Word.Activities": "[1.19.1-preview]"
+    "UiPath.System.Activities": "[23.10.3]",
+    "UiPath.UIAutomation.Activities": "[23.10.7]"
   },
   "webServices": [],
   "entitiesStores": [],
