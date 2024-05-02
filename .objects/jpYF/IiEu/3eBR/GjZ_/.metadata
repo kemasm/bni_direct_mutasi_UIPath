@@ -1,0 +1,16 @@
+﻿{
+  "Name": "link_mutasiRekening",
+  "Type": "Element",
+  "TaxonomyType": "Link",
+  "Id": "GjZ_FUCHrkKgPpAXDxEBYg",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/GjZ_FUCHrkKgPpAXDxEBYg",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/3eBRES0HV0i7p5691jIJcQ",
+  "Created": "2024-04-23T04:15:42.5092657Z",
+  "Updated": "2024-04-23T04:19:51.1933836Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

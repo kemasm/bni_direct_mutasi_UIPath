@@ -1,0 +1,15 @@
+{
+  "Tags": [
+    {
+      "Key": "BNI"
+    },
+    {
+      "Key": "BNIDirect"
+    },
+    {
+      "Key": "Direct"
+    }
+  ],
+  "SeparateRuntimeDependencies": true,
+  "IncludeSources": true
+}

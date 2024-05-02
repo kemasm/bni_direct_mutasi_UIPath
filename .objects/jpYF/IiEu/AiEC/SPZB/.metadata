@@ -1,0 +1,13 @@
+﻿{
+  "Name": "button_logout",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "SPZBEK-zpU2DNjSn9_bbEg",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/SPZBEK-zpU2DNjSn9_bbEg",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-18T05:48:11.7415669Z",
+  "Updated": "2024-04-18T05:48:11.7415669Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

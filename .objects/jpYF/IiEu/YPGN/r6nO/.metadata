@@ -1,0 +1,13 @@
+﻿{
+  "Name": "label_tableHeader",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "r6nOqftrd0SlQw4ARtLKjg",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/r6nOqftrd0SlQw4ARtLKjg",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-18T09:00:47.2046549Z",
+  "Updated": "2024-04-18T09:00:47.2046549Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

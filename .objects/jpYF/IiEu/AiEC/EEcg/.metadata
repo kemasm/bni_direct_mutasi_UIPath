@@ -1,0 +1,13 @@
+﻿{
+  "Name": "link_laporan",
+  "Type": "Element",
+  "TaxonomyType": "Link",
+  "Id": "EEcgGZo-zkumuNk2Vj2zsg",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/EEcgGZo-zkumuNk2Vj2zsg",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-18T08:26:06.649864Z",
+  "Updated": "2024-04-18T08:26:06.649864Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

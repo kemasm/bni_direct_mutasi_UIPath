@@ -1,0 +1,16 @@
+﻿{
+  "Name": "element_unduhLaporanMarker",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "HB1eiCSbcUWNvNM6MOrO5Q",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/HB1eiCSbcUWNvNM6MOrO5Q",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-23T04:25:27.5543205Z",
+  "Updated": "2024-04-26T04:09:42.0755315Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "element_homeMarker",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "wTwV9pfRIEy_Y4H4VfYA0Q",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/wTwV9pfRIEy_Y4H4VfYA0Q",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/3eBRES0HV0i7p5691jIJcQ",
+  "Created": "2024-04-23T04:18:08.8824119Z",
+  "Updated": "2024-04-23T04:18:08.8824119Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "checkbox_selectAll",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "PAJsFsqaCke2InrPtz_NlA",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/PAJsFsqaCke2InrPtz_NlA",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-26T04:09:42.1533889Z",
+  "Updated": "2024-04-26T04:09:42.1533889Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

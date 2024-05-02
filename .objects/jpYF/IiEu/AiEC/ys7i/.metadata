@@ -1,0 +1,13 @@
+﻿{
+  "Name": "button_unduh",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "ys7iJzeJtkCGU26Cd6x16w",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/ys7iJzeJtkCGU26Cd6x16w",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-18T05:48:11.411415Z",
+  "Updated": "2024-04-18T05:48:11.411415Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

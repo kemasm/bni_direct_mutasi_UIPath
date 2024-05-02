@@ -1,0 +1,13 @@
+﻿{
+  "Name": "text_noRekeningErrorMessage",
+  "Type": "Element",
+  "TaxonomyType": "Text",
+  "Id": "ojYQgHIK9U-KXsSd2gkRNA",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/ojYQgHIK9U-KXsSd2gkRNA",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/AiECqCc570GyoBPcWKDgjg",
+  "Created": "2024-04-18T05:52:18.815869Z",
+  "Updated": "2024-04-18T05:52:18.815869Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "label_informasiRekening",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "a9-SHZL87EKi83d39a6WdQ",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/a9-SHZL87EKi83d39a6WdQ",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-18T08:38:48.5375043Z",
+  "Updated": "2024-04-18T08:38:48.5375043Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,16 @@
+﻿{
+  "Name": "button_dropdownInfoRekening",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "-lg4ewWPgECBY8RNRhn8_A",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/-lg4ewWPgECBY8RNRhn8_A",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/3eBRES0HV0i7p5691jIJcQ",
+  "Created": "2024-04-18T04:23:55.3751018Z",
+  "Updated": "2024-04-18T05:04:38.9159915Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "button_cari",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "nwVkORVnzUeGZw9f4rIPEQ",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/nwVkORVnzUeGZw9f4rIPEQ",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/YPGNSj8r-0KWR4TGV3RnVw",
+  "Created": "2024-04-18T08:38:48.5076154Z",
+  "Updated": "2024-04-18T08:38:48.5076154Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

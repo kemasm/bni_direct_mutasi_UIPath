@@ -1,0 +1,13 @@
+﻿{
+  "Name": "img_banner",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "Xhaj3jArwUCfQLXZ-aJR4g",
+  "Reference": "k3sD638TWkKWXUr3w00gUg/Xhaj3jArwUCfQLXZ-aJR4g",
+  "ParentRef": "k3sD638TWkKWXUr3w00gUg/lUdpoETSl02ptpfVgfwnCg",
+  "Created": "2024-04-18T04:35:59.2742541Z",
+  "Updated": "2024-04-18T04:35:59.2742541Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
