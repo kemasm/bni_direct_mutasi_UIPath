@@ -7,7 +7,7 @@
     <x:Property Name="bool_is_development" Type="InArgument(x:Boolean)" />
     <x:Property Name="str_ftp_input_file_path" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>957,1900</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>957,1626</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,7 +137,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create/Read Output Data Table" sap:VirtualizedContainerService.HintSize="608,1835" sap2010:WorkflowViewState.IdRef="Sequence_178">
+  <Sequence DisplayName="Create/Read Output Data Table" sap:VirtualizedContainerService.HintSize="608,1561" sap2010:WorkflowViewState.IdRef="Sequence_178">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_input_file_path" />
     </Sequence.Variables>
@@ -147,7 +147,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[not(Len(Dir(str_output_file_path)) = 0)]" DisplayName="If output file already exist" sap:VirtualizedContainerService.HintSize="546,1559" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[not(Len(Dir(str_output_file_path)) = 0)]" DisplayName="If output file already exist" sap:VirtualizedContainerService.HintSize="546,1368" sap2010:WorkflowViewState.IdRef="If_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -166,7 +166,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else create datatable from input file" sap:VirtualizedContainerService.HintSize="512,1127" sap2010:WorkflowViewState.IdRef="Sequence_69">
+        <Sequence DisplayName="Else create datatable from input file" sap:VirtualizedContainerService.HintSize="512,936" sap2010:WorkflowViewState.IdRef="Sequence_69">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,29 +186,51 @@
               <InArgument x:TypeArguments="x:String">[Path.Join(str_input_file_path, STR_INPUT_FILE_NAME)]</InArgument>
             </Assign.Value>
           </Assign>
-          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" ClientCertificateSecurePassword="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" CertificatePasswordInputModeSwitch="Password" ContinueOnError="[bool_is_development]" DisplayName="FTP Scope" sap:VirtualizedContainerService.HintSize="450,405" Host="ftp://192.168.99.193" sap2010:WorkflowViewState.IdRef="WithFtpSession_5" Password="Bnidirect123!!" PasswordInputModeSwitch="Password" Username="ftpbnidirect">
-            <p:WithFtpSession.Body>
-              <ActivityAction x:TypeArguments="p:IFtpSession">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Update Input File from FTP Server" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="Sequence_177">
+          <If Condition="[not bool_is_development]" DisplayName="If on production" sap:VirtualizedContainerService.HintSize="450,214" sap2010:WorkflowViewState.IdRef="If_9">
+            <If.Then>
+              <Sequence DisplayName="Then update input file from ftp" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" ClientCertificateSecurePassword="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" CertificatePasswordInputModeSwitch="Password" ContinueOnError="[bool_is_development]" DisplayName="FTP Scope" sap:VirtualizedContainerService.HintSize="354,48" Host="ftp://192.168.99.193" sap2010:WorkflowViewState.IdRef="WithFtpSession_5" Password="Bnidirect123!!" PasswordInputModeSwitch="Password" Username="ftpbnidirect">
+                  <p:WithFtpSession.Body>
+                    <ActivityAction x:TypeArguments="p:IFtpSession">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Update Input File from FTP Server" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download files" sap:VirtualizedContainerService.HintSize="354,161" sap2010:WorkflowViewState.IdRef="DownloadFiles_2" LocalPath="[str_input_file_path]" Overwrite="True" Recursive="False" RemotePath="[str_ftp_input_file_path]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </p:WithFtpSession.Body>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download files" sap:VirtualizedContainerService.HintSize="354,161" sap2010:WorkflowViewState.IdRef="DownloadFiles_2" LocalPath="[str_input_file_path]" Overwrite="True" Recursive="False" RemotePath="[str_ftp_input_file_path]" />
-                </Sequence>
-              </ActivityAction>
-            </p:WithFtpSession.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </p:WithFtpSession>
+                </p:WithFtpSession>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
           <ui:ReadCsvFile DataTable="[DT_OutputFile]" Delimitator="Semicolon" DisplayName="Read CSV" FilePath="[str_input_file_path]" sap:VirtualizedContainerService.HintSize="450,186" sap2010:WorkflowViewState.IdRef="ReadCsvFile_3" />
           <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[DT_OutputFile]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7">
             <sap:WorkflowViewStateService.ViewState>
@@ -237,7 +259,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Sequence DisplayName="Add Temporary Columns" sap:VirtualizedContainerService.HintSize="546,113" sap2010:WorkflowViewState.IdRef="Sequence_67">
+    <Sequence DisplayName="Add Temporary Columns" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="Sequence_67">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -261,7 +283,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
     </Sequence>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_OutputFile]" DisplayName="Feed Temporary Columns For Each Row" sap:VirtualizedContainerService.HintSize="546,75" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_OutputFile]" DisplayName="Feed Temporary Columns For Each Row" sap:VirtualizedContainerService.HintSize="546,48" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
