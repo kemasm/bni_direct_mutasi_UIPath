@@ -5,7 +5,7 @@
     <x:Property Name="str_output_file_path" Type="InArgument(x:String)" />
     <x:Property Name="str_output_dir_path" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>957,3298</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,1409</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,7 +125,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Post-process" sap:VirtualizedContainerService.HintSize="674,3233" sap2010:WorkflowViewState.IdRef="Sequence_187">
+  <Sequence DisplayName="Post-process" sap:VirtualizedContainerService.HintSize="574,1344" sap2010:WorkflowViewState.IdRef="Sequence_187">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_MailedRows" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_UnmailedRows" />
@@ -136,10 +136,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Send Mail to Clients" sap:VirtualizedContainerService.HintSize="612,2158" sap2010:WorkflowViewState.IdRef="Sequence_194">
+    <Sequence DisplayName="Send Mail to Clients" sap:VirtualizedContainerService.HintSize="512,57" sap2010:WorkflowViewState.IdRef="Sequence_194">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="550,173" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;sending mails: start&quot;]">
@@ -241,15 +242,9 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sequences\SendMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\SendMail.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="sd:DataRow" x:Key="DataRow_Row">
-                          <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="CurrentRow" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="str_output_dir_path">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_output_dir_path" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="bool_has_attachment">
-                          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="CurrentRow.Item(&quot;Status&quot;).ToString = &quot;Sukses&quot;" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="sd:DataRow" x:Key="DataRow_Row">[CurrentRow]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="str_output_dir_path">[str_output_dir_path]</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="bool_has_attachment">[CurrentRow.Item("Status").ToString = "Sukses"]</InArgument>
                         <OutArgument x:TypeArguments="x:String" x:Key="str_status_code" />
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
@@ -320,7 +315,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </Sequence>
-    <ui:MergeDataTable Destination="[DT_ProcessedRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="612,165" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Add" Source="[DT_MailedRows]">
+    <ui:MergeDataTable Destination="[DT_ProcessedRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="512,165" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Add" Source="[DT_MailedRows]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -328,13 +323,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MergeDataTable>
-    <Sequence DisplayName="Create Output File" sap:VirtualizedContainerService.HintSize="612,822" sap2010:WorkflowViewState.IdRef="Sequence_193">
+    <Sequence DisplayName="Create Output File" sap:VirtualizedContainerService.HintSize="512,1034" sap2010:WorkflowViewState.IdRef="Sequence_193">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Parse No Column to Integer" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="Sequence_189">
+      <Sequence DisplayName="Parse No Column to Integer" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_189">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -388,7 +383,7 @@
           <InArgument x:TypeArguments="x:Int32">0</InArgument>
         </InvokeMethod>
       </Sequence>
-      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="No" DataTable="[DT_ProcessedRows]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[DT_ProcessedRows]" SortOrder="Ascending">
+      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="No" DataTable="[DT_ProcessedRows]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[DT_ProcessedRows]" SortOrder="Ascending">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -396,10 +391,10 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:SortDataTable>
-      <Sequence DisplayName="Remove Temporary Columns" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="Sequence_190">
+      <Sequence DisplayName="Remove Temporary Columns" sap:VirtualizedContainerService.HintSize="450,547" sap2010:WorkflowViewState.IdRef="Sequence_190">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -420,7 +415,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDataColumn>
       </Sequence>
-      <If Condition="[System.IO.File.Exists(str_output_file_path)]" DisplayName="If previously downloaded file exists" sap:VirtualizedContainerService.HintSize="450,326" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[System.IO.File.Exists(str_output_file_path)]" DisplayName="If previously downloaded file exists" sap:VirtualizedContainerService.HintSize="450,214" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -428,7 +423,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then Delete Previously Existing Output File" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_191">
+          <Sequence DisplayName="Then Delete Previously Existing Output File" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_191">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -439,7 +434,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_192">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_192">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -449,7 +444,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:WriteCsvFile AddHeaders="True" DataTable="[DT_ProcessedRows]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="[str_output_file_path]" sap:VirtualizedContainerService.HintSize="450,75" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
+      <ui:WriteCsvFile AddHeaders="True" DataTable="[DT_ProcessedRows]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="[str_output_file_path]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>

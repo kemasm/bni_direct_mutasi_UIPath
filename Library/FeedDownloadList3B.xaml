@@ -1,12 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FeedDownloadList3B" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FeedDownloadList3B" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="UiElement_Webpage" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="DataRow_Row" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="datetime_start_date" Type="InArgument(s:DateTime)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>844,2994</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,2679</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FeedDownloadList3B_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,9 +105,11 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FeedDownloadList3B" sap:VirtualizedContainerService.HintSize="854,2929" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FeedDownloadList3B" sap:VirtualizedContainerService.HintSize="854,2614" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_is_success_download" />
     </Sequence.Variables>
@@ -115,22 +118,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="792,2841" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="792,2526" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="758,2681" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="758,2366" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="696,901" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="696,113" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -205,7 +208,19 @@
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
             </Sequence>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'No. Rekening'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="696,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[DataRow_Row.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clear 'Tanggal Awal'" sap:VirtualizedContainerService.HintSize="696,189" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="929, 396, 27, 25" CvType="Icon" DesignTimeRectangle="932, 399, 20, 20" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl src='/images/nextgenimage/icons/icon_eraser.png' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl src='/images/nextgenimage/icons/icon_eraser.png' tag='IMG' type='' class='' aaname='' /&gt;" Guid="c9737c1e-caf0-473c-ae68-c5b9535eb085" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFNSURBVEhLzZVBa8IwFID3f3WgHru1znlUoWi7sYJjA4WdJgUZuJOwX9KDu/Rc2rrDW1/ICxqbJsEJ++BhpPb7sA3tFVyY/x1I05Sv1FgHsiyDKIrgutVi0/f6sFgu+dFTrAIo91wPwvAR/GkIk/EEprMQxqMRi9ZhHJDlNLqIUUAlN4loAzo5zWHkfbXiZ2sCpnKa4f2QfXZ7PW5oCNjKg4cncF0XZvh73+cWReAcebfTgSRJuKkmgPLB3QDeqr1tEmiSI0cBkn/vduz713bbGNHJERGQ5YQqYiJHRAC3liwn5IipHBGBz82Gr+qhiI0cEYE4jpX/gPhYr6FdPeBwv5vIEe09IPb7H1i8vkCe53Dr3BjJERFAVBGSl2VpJUeOAogcIXlRFNZy5CSAYCQIAnAdp7rmbSZ+ns+N3mAytQECQzjn0Bj4Cy4cAPgF3lwZxsAton4AAAAASUVORK5CYII=" InformativeScreenshot="b441f4b4f324e9ee4f075657539ea019.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="395, 394, 87, 16" CvTextArgument="Tanggal Awal" CvType="Text" DesignTimeRectangle="396, 394, 85, 15" FriendlyName="'Tanggal Awal'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='B' type='' class='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                    Tanggal Awal' check:innerText='Tanggal Awal' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Type Into 'Tanggal Awal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="696,228" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[datetime_start_date.toString(&quot;ddMMyyyy&quot;)]" Version="V3" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'No. Rekening'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="696,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[DataRow_Row.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="1054, 545, 207, 36" CvType="InputBox" DesignTimeRectangle="1057, 547, 201, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' class='picklist-form-control' aaname='' /&gt;" Guid="11952960-7580-492c-94f7-b32692f49077" InformativeScreenshot="06fb9ff613645f060bf541464b371023.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -238,16 +253,16 @@
                 </uix:TargetAnchorable>
               </uix:NSelectItem.Target>
             </uix:NSelectItem>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not(bool_is_success_download)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="696,1254" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not(bool_is_success_download)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="696,1310" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="662,1115" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="662,1171" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Hasil: Permintaan'" EnableIfExists="False" Exists="[bool_is_success_download]" sap:VirtualizedContainerService.HintSize="600,1030" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Hasil: Permintaan'" EnableIfExists="False" Exists="[bool_is_success_download]" sap:VirtualizedContainerService.HintSize="600,1086" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
@@ -258,7 +273,7 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="556,790" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="556,846" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -281,9 +296,9 @@
                             <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="1447, 879, 85, 32" CvTextArea="1469, 888, 41, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1450, 881, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Unduh'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="801f3538-77e0-4047-a216-1c376b2d5582" InformativeScreenshot="e36d3dc55a0fe83b9e594706ddf986e0.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,267" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,323" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,649" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
