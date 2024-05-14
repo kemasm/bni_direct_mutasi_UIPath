@@ -5,7 +5,7 @@
     <x:Property Name="str_output_file_path" Type="InArgument(x:String)" />
     <x:Property Name="str_output_dir_path" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1120,1409</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>861,3846</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,10 +125,10 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Post-process" sap:VirtualizedContainerService.HintSize="574,1344" sap2010:WorkflowViewState.IdRef="Sequence_187">
+  <Sequence DisplayName="Post-process" sap:VirtualizedContainerService.HintSize="674,3781" sap2010:WorkflowViewState.IdRef="Sequence_187">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="DT_MailedRows" />
-      <Variable x:TypeArguments="sd:DataTable" Name="DT_UnmailedRows" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_NotRecepientRows" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_RecepientRows" />
       <Variable x:TypeArguments="x:Int32" Name="int_index" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -136,10 +136,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Send Mail to Clients" sap:VirtualizedContainerService.HintSize="512,57" sap2010:WorkflowViewState.IdRef="Sequence_194">
+    <Sequence DisplayName="Send Mail to Clients" sap:VirtualizedContainerService.HintSize="612,2323" sap2010:WorkflowViewState.IdRef="Sequence_198">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -151,7 +151,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:FilterDataTable DataTable="[DT_UnprocessedRows]" DisplayName="Filter Data Table For Mailed Clients" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="550,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[DT_MailedRows]" SelectColumnsMode="Remove">
+      <ui:MergeDataTable Destination="[DT_ProcessedRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="550,165" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[DT_UnprocessedRows]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MergeDataTable>
+      <ui:FilterDataTable DataTable="[DT_ProcessedRows]" DisplayName="Filter Data Table For Mailed Clients" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="550,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[DT_RecepientRows]" SelectColumnsMode="Remove">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
@@ -159,7 +167,7 @@
                 <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
               </ui:FilterOperationArgument.Column>
             </ui:FilterOperationArgument>
-            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
               <ui:FilterOperationArgument.Column>
                 <InArgument x:TypeArguments="x:String">["Mail Sent"]</InArgument>
               </ui:FilterOperationArgument.Column>
@@ -181,7 +189,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <ui:FilterDataTable DataTable="[DT_UnprocessedRows]" DisplayName="Filter Data Table For Mailed Clients" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="550,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[DT_UnmailedRows]" SelectColumnsMode="Remove">
+      <ui:FilterDataTable DataTable="[DT_ProcessedRows]" DisplayName="Filter Data Table For Mailed Clients" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="550,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[DT_NotRecepientRows]" SelectColumnsMode="Remove">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
@@ -189,7 +197,7 @@
                 <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
               </ui:FilterOperationArgument.Column>
             </ui:FilterOperationArgument>
-            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
               <ui:FilterOperationArgument.Column>
                 <InArgument x:TypeArguments="x:String">["Mail Sent"]</InArgument>
               </ui:FilterOperationArgument.Column>
@@ -211,7 +219,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[int_index]" DataTable="[DT_UnmailedRows]" DisplayName="For Each Not Yet Mailed Clients" sap:VirtualizedContainerService.HintSize="550,1150" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[int_index]" DataTable="[DT_RecepientRows]" DisplayName="For Each Not Yet Mailed Clients" sap:VirtualizedContainerService.HintSize="550,1150" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
@@ -224,7 +232,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="454,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[&quot;+(int_index + 1).ToString+&quot;/&quot;+DT_UnmailedRows.Rows.Count.ToString+&quot;] &quot; + &#xA;&quot;Process: &quot; + String.Join(&quot; | &quot;, CurrentRow.ItemArray)]">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="454,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[&quot;+(int_index + 1).ToString+&quot;/&quot;+DT_RecepientRows.Rows.Count.ToString+&quot;] &quot; + &#xA;&quot;Process: &quot; + String.Join(&quot; | &quot;, CurrentRow.ItemArray)]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -298,7 +306,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:MergeDataTable Destination="[DT_MailedRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="550,165" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[DT_UnmailedRows]">
+      <ui:MergeDataTable Destination="[DT_NotRecepientRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="550,165" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[DT_RecepientRows]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -315,21 +323,21 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </Sequence>
-    <ui:MergeDataTable Destination="[DT_ProcessedRows]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="512,165" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Add" Source="[DT_MailedRows]">
+    <Assign sap:VirtualizedContainerService.HintSize="612,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[DT_ProcessedRows]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[DT_NotRecepientRows]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Sequence DisplayName="Create Output File" sap:VirtualizedContainerService.HintSize="612,1256" sap2010:WorkflowViewState.IdRef="Sequence_193">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:MergeDataTable>
-    <Sequence DisplayName="Create Output File" sap:VirtualizedContainerService.HintSize="512,1034" sap2010:WorkflowViewState.IdRef="Sequence_193">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Parse No Column to Integer" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_189">
+      <Sequence DisplayName="Parse No Column to Integer" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="Sequence_189">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -383,7 +391,7 @@
           <InArgument x:TypeArguments="x:Int32">0</InArgument>
         </InvokeMethod>
       </Sequence>
-      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="No" DataTable="[DT_ProcessedRows]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[DT_ProcessedRows]" SortOrder="Ascending">
+      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="No" DataTable="[DT_ProcessedRows]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[DT_ProcessedRows]" SortOrder="Ascending">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -415,7 +423,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDataColumn>
       </Sequence>
-      <If Condition="[System.IO.File.Exists(str_output_file_path)]" DisplayName="If previously downloaded file exists" sap:VirtualizedContainerService.HintSize="450,214" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[System.IO.File.Exists(str_output_file_path)]" DisplayName="If previously downloaded file exists" sap:VirtualizedContainerService.HintSize="450,326" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -423,7 +431,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then Delete Previously Existing Output File" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_191">
+          <Sequence DisplayName="Then Delete Previously Existing Output File" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_191">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -434,7 +442,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_192">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_192">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -444,7 +452,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:WriteCsvFile AddHeaders="True" DataTable="[DT_ProcessedRows]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="[str_output_file_path]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
+      <ui:WriteCsvFile AddHeaders="True" DataTable="[DT_ProcessedRows]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="[str_output_file_path]" sap:VirtualizedContainerService.HintSize="450,75" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>

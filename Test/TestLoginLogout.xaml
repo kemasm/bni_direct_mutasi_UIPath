@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestLoginLogout" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="858,595" sap2010:WorkflowViewState.IdRef="TestLoginLogout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestLoginLogout" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="861,813" sap2010:WorkflowViewState.IdRef="TestLoginLogout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -28,6 +28,7 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -66,33 +67,71 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestLoginLogout" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TestLoginLogout" sap:VirtualizedContainerService.HintSize="416,281" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="UiElement_Webpage" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_is_development">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" Value="True" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login2B.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\Login2B.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login2B.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\Login2B.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">
           <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="UiElement_Webpage" />
         </OutArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="bool_is_development" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\ClearDownloadList2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Library\ClearDownloadList2.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logout2B.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\Logout2B.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,366" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\ClearDownloadList2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Library\ClearDownloadList2.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">
+                <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="UiElement_Webpage" />
+              </InOutArgument>
+              <InArgument x:TypeArguments="s:DateTime" x:Key="datetime_start_date">
+                <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Date.Today" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logout2B.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Trace" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="Library\Logout2B.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="UiElement_Webpage">[UiElement_Webpage]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

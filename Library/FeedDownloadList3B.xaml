@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1120,2679</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>861,3550</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FeedDownloadList3B_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -52,64 +52,65 @@
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.Collections</AssemblyReference>
-      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FeedDownloadList3B" sap:VirtualizedContainerService.HintSize="854,2614" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FeedDownloadList3B" sap:VirtualizedContainerService.HintSize="810,3485" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_is_success_download" />
     </Sequence.Variables>
@@ -118,77 +119,55 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="792,2526" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="748,3397" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[UiElement_Webpage]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[UiElement_Webpage]" ScopeGuid="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="758,2366" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="714,3237" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="696,113" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Open Mutasi Rekening Page" sap:VirtualizedContainerService.HintSize="652,565" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NCheckState DisplayName="Check App State 'Mutasi Rekening'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,561" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
-                <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
-                </uix:NCheckState.IfExists>
-                <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Informasi Rekening'" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvElementArea="419, 430, 19, 19" CvType="Icon" DesignTimeRectangle="422, 434, 13, 13" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='SPAN' type='' class='icon-add-outline' aaname='' /&gt;" Guid="7e562a15-1c6d-4486-8364-fe4b6894e7fe" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVDhPrZJPS8NAEMX9/rd+BfHiSSiiCEKhioJ/6qGlQm3BllJra60hpEmTkLG/hVk26eYgduExeW/evmQne9Q8bsh/URtyc3Eqr507mQz7psJ9PrAXgvlntZCiKMRdcHRfWCnkuX0peZ5JlqXyPujaDVQ4On187j4b0mqeyDbZSBJH5lm1zu1VidPHpxqwIR+Tofnkh9a5bfae2uYoVNXo48Ovmg2Jo1BWnzPbAL4QgA+/chvCGg965vlrPpXgeylhsDY6FY5OHx9L93pDojCQLN1KvhskiwpHp18bkiaxLGZj2wB1x8GHX7kN4VPT3dvcqftC6OPTowEbolN3v+b++szcWKpq9Kt/0YYAPStDrN5MODpLZ6cohYC37qO5mbwt2URmIxWOTr+6Zy8EcO5R/0XWy7kJocLdebnwhvwVBwhpyC/W9p5ScljK9wAAAABJRU5ErkJggg==" InformativeScreenshot="7df1c9fae3e5e08cd36458a584e73108.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CvTextArea="445, 434, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="438, 434, 121, 15" FriendlyName="'Informasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                  </Sequence>
-                </uix:NCheckState.IfNotExists>
-                <uix:NCheckState.Target>
-                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvTextArea="453, 514, 99, 16" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="454, 514, 98, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Mutasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="a1a1b538-7f35-437e-9d10-3b3abc58f733" InformativeScreenshot="85e03e29ae88f85e0467e5ce9b44b68d.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Informasi Rekening'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvElementArea="99, 487, 19, 19" CvType="Icon" DesignTimeRectangle="102, 490, 13, 13" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='SPAN' type='' class='icon-add-outline' aaname='' /&gt;" Guid="62082491-5877-42df-b638-7b10a34aa8f1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVDhPrZJPS8NAEMX9/rd+BfHiSSiiCEKhioJ/6qGlQm3BllJra60hpEmTkLG/hVk26eYgduExeW/evmQne9Q8bsh/URtyc3Eqr507mQz7psJ9PrAXgvlntZCiKMRdcHRfWCnkuX0peZ5JlqXyPujaDVQ4On187j4b0mqeyDbZSBJH5lm1zu1VidPHpxqwIR+Tofnkh9a5bfae2uYoVNXo48Ovmg2Jo1BWnzPbAL4QgA+/chvCGg965vlrPpXgeylhsDY6FY5OHx9L93pDojCQLN1KvhskiwpHp18bkiaxLGZj2wB1x8GHX7kN4VPT3dvcqftC6OPTowEbolN3v+b++szcWKpq9Kt/0YYAPStDrN5MODpLZ6cohYC37qO5mbwt2URmIxWOTr+6Zy8EcO5R/0XWy7kJocLdebnwhvwVBwhpyC/W9p5ScljK9wAAAABJRU5ErkJggg==" InformativeScreenshot="422a0a55ac53c019949ae66e4f7fe912.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CvTextArea="445, 434, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="438, 434, 121, 15" FriendlyName="'Informasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" SearchSteps="FuzzySelector, CV" />
+                        <uix:Target CvTextArea="125, 490, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="118, 490, 121, 15" FriendlyName="'Informasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
-                </uix:NCheckState.Target>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </uix:NCheckState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Mutasi Rekening'" sap:VirtualizedContainerService.HintSize="494,218" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Timeout="300" Version="V3">
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="Label 'Mutasi Rekening'" Mode="Appears" Retry="True" Timeout="1">
+                    <uix:VerifyExecutionOptions.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvTextArea="133, 570, 99, 15" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="134, 570, 98, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Mutasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="96b36137-588c-4382-bef7-f5ed24449cfb" InformativeScreenshot="bd9311de2c8e8ee513bebbef4571c73b.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="125, 490, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="118, 490, 121, 15" FriendlyName="'Informasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:VerifyExecutionOptions.Target>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Mutasi Rekening'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Timeout="300" Version="V3">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvTextArea="453, 514, 99, 16" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="454, 514, 98, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Mutasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="e51d08e7-4e34-4ed1-a905-f32c58201cce" InformativeScreenshot="0f57e8a44f578a5a80c84ba964b6b974.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvTextArea="133, 570, 99, 15" CvTextArgument="Mutasi Rekening" CvType="Text" DesignTimeRectangle="134, 570, 98, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Mutasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_040200' tag='A' type='' class='menu-item' aaname='                                                     Mutasi Rekening                                                 ' check:innerText='Mutasi Rekening' /&gt;" Guid="09bf223c-fbe6-4f5d-aa64-6aeb67055d10" InformativeScreenshot="a182cad09c6bf6c4b998224994824b00.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CvTextArea="445, 434, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="438, 434, 121, 15" FriendlyName="'Informasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" SearchSteps="FuzzySelector, CV" />
+                        <uix:Target CvTextArea="125, 490, 114, 16" CvTextArgument="Informasi Rekening" CvType="Text" DesignTimeRectangle="118, 490, 121, 15" FriendlyName="'Informasi Rekening'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_040000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Informasi Rekening                                 ' check:innerText='Informasi Rekening' /&gt;" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
@@ -208,7 +187,7 @@
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
             </Sequence>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clear 'Tanggal Awal'" sap:VirtualizedContainerService.HintSize="696,189" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clear 'Tanggal Awal'" sap:VirtualizedContainerService.HintSize="652,189" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="929, 396, 27, 25" CvType="Icon" DesignTimeRectangle="932, 399, 20, 20" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl src='/images/nextgenimage/icons/icon_eraser.png' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl src='/images/nextgenimage/icons/icon_eraser.png' tag='IMG' type='' class='' aaname='' /&gt;" Guid="c9737c1e-caf0-473c-ae68-c5b9535eb085" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFNSURBVEhLzZVBa8IwFID3f3WgHru1znlUoWi7sYJjA4WdJgUZuJOwX9KDu/Rc2rrDW1/ICxqbJsEJ++BhpPb7sA3tFVyY/x1I05Sv1FgHsiyDKIrgutVi0/f6sFgu+dFTrAIo91wPwvAR/GkIk/EEprMQxqMRi9ZhHJDlNLqIUUAlN4loAzo5zWHkfbXiZ2sCpnKa4f2QfXZ7PW5oCNjKg4cncF0XZvh73+cWReAcebfTgSRJuKkmgPLB3QDeqr1tEmiSI0cBkn/vduz713bbGNHJERGQ5YQqYiJHRAC3liwn5IipHBGBz82Gr+qhiI0cEYE4jpX/gPhYr6FdPeBwv5vIEe09IPb7H1i8vkCe53Dr3BjJERFAVBGSl2VpJUeOAogcIXlRFNZy5CSAYCQIAnAdp7rmbSZ+ns+N3mAytQECQzjn0Bj4Cy4cAPgF3lwZxsAton4AAAAASUVORK5CYII=" InformativeScreenshot="b441f4b4f324e9ee4f075657539ea019.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -219,8 +198,8 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Type Into 'Tanggal Awal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="696,228" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[datetime_start_date.toString(&quot;ddMMyyyy&quot;)]" Version="V3" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'No. Rekening'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="696,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[DataRow_Row.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Type Into 'Tanggal Awal'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="652,228" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[datetime_start_date.toString(&quot;ddMMyyyy&quot;)]" Version="V3" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'No. Rekening'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="652,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Text="[DataRow_Row.Item(&quot;No Rekening&quot;).ToString]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="1054, 545, 207, 36" CvType="InputBox" DesignTimeRectangle="1057, 547, 201, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='accountDisplay' tag='INPUT' type='text' class='picklist-form-control' aaname='' /&gt;" Guid="11952960-7580-492c-94f7-b32692f49077" InformativeScreenshot="06fb9ff613645f060bf541464b371023.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -231,7 +210,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NSelectItem DisplayName="Select Item 'Format File'" sap:VirtualizedContainerService.HintSize="696,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[DataRow_Row.Item(&quot;File Type&quot;).ToString]" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+            <uix:NSelectItem DisplayName="Select Item 'Format File'" sap:VirtualizedContainerService.HintSize="652,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[DataRow_Row.Item(&quot;File Type&quot;).ToString]" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
               <uix:NSelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="7">
                   <x:String></x:String>
@@ -253,16 +232,131 @@
                 </uix:TargetAnchorable>
               </uix:NSelectItem.Target>
             </uix:NSelectItem>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not(bool_is_success_download)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="696,1310" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="652,144" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="5" Version="V3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NMouseScroll>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="652,189" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="1447, 879, 85, 32" CvTextArea="1469, 888, 41, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1450, 881, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Unduh'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="801f3538-77e0-4047-a216-1c376b2d5582" InformativeScreenshot="e36d3dc55a0fe83b9e594706ddf986e0.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not(bool_is_success_download)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="652,1396" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="662,1171" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="618,1257" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Hasil: Permintaan'" EnableIfExists="False" Exists="[bool_is_success_download]" sap:VirtualizedContainerService.HintSize="600,1086" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="556,792" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Timeout="2.5" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,543" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="UpdateRowItem_3" Row="[DataRow_Row]" Value="[&quot;Gagal&quot;]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:UpdateRowItem>
+                        <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="UpdateRowItem_4" Row="[DataRow_Row]" Value="[&quot;No Rekening Tidak Ditemukan&quot;]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:UpdateRowItem>
+                        <Sequence DisplayName="Open Laporan Page" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Laporan'" sap:VirtualizedContainerService.HintSize="388,189" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvElementArea="99, 640, 19, 19" CvType="Icon" DesignTimeRectangle="102, 643, 13, 13" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='SPAN' type='' class='icon-add-outline' aaname='' /&gt;" Guid="fed6a394-c664-4a0c-9c05-0559893ade5b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVDhPrZJPS8NAEMX9/rd+BfHiSSiiCEKhioJ/6qGlQm3BllJra60hpEmTkLG/hVk26eYgduExeW/evmQne9Q8bsh/URtyc3Eqr507mQz7psJ9PrAXgvlntZCiKMRdcHRfWCnkuX0peZ5JlqXyPujaDVQ4On187j4b0mqeyDbZSBJH5lm1zu1VidPHpxqwIR+Tofnkh9a5bfae2uYoVNXo48Ovmg2Jo1BWnzPbAL4QgA+/chvCGg965vlrPpXgeylhsDY6FY5OHx9L93pDojCQLN1KvhskiwpHp18bkiaxLGZj2wB1x8GHX7kN4VPT3dvcqftC6OPTowEbolN3v+b++szcWKpq9Kt/0YYAPStDrN5MODpLZ6cohYC37qO5mbwt2URmIxWOTr+6Zy8EcO5R/0XWy7kJocLdebnwhvwVBwhpyC/W9p5ScljK9wAAAABJRU5ErkJggg==" InformativeScreenshot="a3d0bf8c06355b0e1e90d408544baad0.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvTextArea="125, 644, 51, 15" CvTextArgument="Laporan" CvType="Text" DesignTimeRectangle="118, 643, 57, 15" FriendlyName="'Laporan'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Laporan                                 ' check:innerText='Laporan' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh Laporan'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Timeout="300" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/common/login.do?action=menuRequest" CvTextArea="133, 687, 94, 15" CvTextArgument="Unduh Laporan" CvType="Text" DesignTimeRectangle="134, 686, 92, 15" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Unduh Laporan'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl id='child-MNU_GCME_180800' tag='A' type='' class='menu-item' aaname='                                                     Unduh Laporan                                                 ' check:innerText='Unduh Laporan' /&gt;" Guid="1df189e8-62f7-47c0-b836-286ee7aa04a7" InformativeScreenshot="645d2cc74c674d38639c118607048082.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvTextArea="125, 644, 51, 15" CvTextArgument="Laporan" CvType="Text" DesignTimeRectangle="118, 643, 57, 15" FriendlyName="'Laporan'" FullSelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sidebar' tag='IFRAME' /&gt;&lt;webctrl parentid='parent-MNU_GCME_180000' tag='FONT' type='' class='pl-2 text-white' aaname='                                     Laporan                                 ' check:innerText='Laporan' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="Label 'Unduh Laporan'" Mode="Appears" Retry="True" Timeout="5">
+                                <uix:VerifyExecutionOptions.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/downloadreport.do?action=doSearchRequest&amp;menuCode=MNU_GCME_180800" CvTextArea="715, 327, 115, 17" CvTextArgument="Unduh Laporan" CvType="Text" DesignTimeRectangle="716, 326, 113, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Unduh Laporan'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl id='downloadReportTabGroup' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl id='downloadReportTabGroup' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='clsLinkTab' aaname='Unduh Laporan' check:innerText='Unduh Laporan' /&gt;" Guid="a6c97199-c8a9-484c-9763-a9b84c48075f" InformativeScreenshot="c2ebe77df8f941f14cf5a996306c731b.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CvTextArea="716, 364, 129, 15" CvTextArgument="Cari Unduh Laporan" CvType="Text" DesignTimeRectangle="702, 361, 817, 19" ElementType="Text" FriendlyName="'Cari Unduh Laporan'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='col-12' parentid='downloadReportTab' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl class='col-12' parentid='downloadReportTab' tag='DIV' type='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Cari Unduh Laporan &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:innerText='Cari Unduh Laporan' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:VerifyExecutionOptions.Target>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                        </Sequence>
+                        <Throw Exception="[new InvalidDataException(&quot;Account Number is Not Registered&quot;)]" sap:VirtualizedContainerService.HintSize="450,115" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=doCheckValidity&amp;day1=14&amp;mon1=5&amp;year1=2024&amp;day2=14&amp;mon2=5&amp;year2=2024&amp;accountNumber=1478500252&amp;type=download&amp;trxFilter=%&amp;screen=search" CvTextArea="595, 421, 398, 15" CvTextArgument="X Pesan Error: APR-1110063 - No Rekening Tidak Ditemukan" CvType="Text" DesignTimeRectangle="590, 421, 401, 15" DesignTimeScaleFactor="1" FriendlyName="'Pesan Error: APR'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' type='' class='BNI-Message' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                Pesan Error: &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                &amp;#x9;APR-1110063 - No Rekening Tidak Ditemukan &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            &amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            ' check:innerText='Pesan Error: APR-1110063 - No Rekening Tidak Ditemukan' /&gt;" Guid="3b77ff0f-7a41-4c53-b9b4-1e70789c8c7c" ImageBase64="" InformativeScreenshot="46b4be5a6a8b0b0a072ea3c8c544cb8a.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <uix:NCheckState DisplayName="Check App State 'Hasil: Permintaan'" EnableIfExists="False" Exists="[bool_is_success_download]" sap:VirtualizedContainerService.HintSize="556,380" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Timeout="2.5" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
@@ -273,73 +367,27 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="556,846" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="494,244" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
-                          <uix:NMouseScroll.SearchedElement>
-                            <uix:SearchedElement>
-                              <uix:SearchedElement.Target>
-                                <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="1447, 879, 85, 32" CvTextArea="1469, 888, 41, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1450, 881, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Unduh'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="25fdf81a-4da3-41fe-8880-b101e29e930d" InformativeScreenshot="13eafbb6f3c343c427ecd66fc85cc463.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                              </uix:SearchedElement.Target>
-                              <uix:SearchedElement.Timeout>
-                                <InArgument x:TypeArguments="x:Double" />
-                              </uix:SearchedElement.Timeout>
-                            </uix:SearchedElement>
-                          </uix:NMouseScroll.SearchedElement>
-                        </uix:NMouseScroll>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="494,189" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Unduh'" sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=transactionByDateRequest&amp;menuCode=MNU_GCME_040200" CvElementArea="1447, 879, 85, 32" CvTextArea="1469, 888, 41, 13" CvTextArgument="Unduh" CvType="Button" DesignTimeRectangle="1450, 881, 80, 29" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Unduh'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl name='download1' tag='INPUT' type='button' class='BNI-Button-General' aaname='Unduh' check:text='Unduh' /&gt;" Guid="801f3538-77e0-4047-a216-1c376b2d5582" InformativeScreenshot="e36d3dc55a0fe83b9e594706ddf986e0.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                           </uix:NClick.Target>
-                        </uix:NClick>
-                        <uix:NCheckState DisplayName="Check App State 'Pesan Error: APR'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,323" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="2f0993fb-623d-4851-95bd-0dda54ce7418" Version="V3">
-                          <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Status" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,224" sap2010:WorkflowViewState.IdRef="UpdateRowItem_3" Row="[DataRow_Row]" Value="[&quot;Gagal&quot;]" />
-                              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Detail" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="388,224" sap2010:WorkflowViewState.IdRef="UpdateRowItem_4" Row="[DataRow_Row]" Value="[&quot;No Rekening Tidak Ditemukan&quot;]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:UpdateRowItem>
-                              <Throw Exception="[new InvalidDataException(&quot;Account Number is Not Registered&quot;)]" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
-                            </Sequence>
-                          </uix:NCheckState.IfExists>
-                          <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Sequence>
-                          </uix:NCheckState.IfNotExists>
-                          <uix:NCheckState.Target>
-                            <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=doCheckValidity&amp;day1=3&amp;mon1=5&amp;year1=2024&amp;day2=3&amp;mon2=5&amp;year2=2024&amp;accountNumber=123456789&amp;type=download&amp;trxFilter=%&amp;screen=search" CvTextArea="915, 365, 398, 15" CvTextArgument="X Pesan Error: APR-1110063 - No Rekening Tidak Ditemukan" CvType="Text" DesignTimeRectangle="910, 365, 401, 15" DesignTimeScaleFactor="1" FriendlyName="'Pesan Error: APR'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' type='' class='BNI-Message' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                Pesan Error: &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                &amp;#x9;APR-1110063 - No Rekening Tidak Ditemukan &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                                 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            &amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            ' check:innerText='Pesan Error: APR-1110063 - No Rekening Tidak Ditemukan' /&gt;" Guid="4072937a-a601-4d0c-adf6-864964f8b226" InformativeScreenshot="3db212700e5a98de751eacf188046962.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                          </uix:NCheckState.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </uix:NCheckState>
+                        </uix:NClick>
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=doDownloadTrxInquiryAsync&amp;accountNumber=126823433&amp;screen=search&amp;accountTypeCode=&amp;currDisplay=&amp;day1=7&amp;mon1=5&amp;year1=2024&amp;day2=7&amp;mon2=5&amp;year2=2024&amp;trxFilter=%" CvTextArea="485, 367, 650, 13" CvTextArgument="Hasil. Permintaan anda sedang diproses. Silakan menuju menu Unduh Laporan untuk pengambilan file." CvType="Text" DesignTimeRectangle="446, 367, 688, 15" DesignTimeScaleFactor="1" FriendlyName="'Hasil: Permintaan'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' type='' class='BNI-Message' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            Hasil: &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            Permintaan anda sedang diproses. Silakan menuju menu  untuk pengambilan file. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                        ' check:innerText='Hasil: Permintaan anda sedang diproses. Silakan menuju menu Unduh Laporan untuk pengambilan file.' /&gt;" Guid="dddf12c6-0046-42ac-897d-1e91fb7284d7" InformativeScreenshot="61f520e56955ac6ffa67fe064e2da162.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="https://bnidirect.bni.co.id/corp/front/transactioninquiry.do?action=doDownloadTrxInquiryAsync&amp;accountNumber=2021356222&amp;screen=search&amp;accountTypeCode=&amp;currDisplay=&amp;day1=14&amp;mon1=5&amp;year1=2024&amp;day2=14&amp;mon2=5&amp;year2=2024&amp;trxFilter=%" CvTextArea="484, 423, 651, 13" CvTextArgument="Hasil Permintaan anda sedang diproses. Silakan menuju menu Unduh Laporan untuk pengambilan file." CvType="Text" DesignTimeRectangle="446, 423, 688, 15" DesignTimeScaleFactor="1" FriendlyName="'Hasil: Permintaan'" FullSelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='content' tag='IFRAME' /&gt;&lt;webctrl tag='FONT' type='' class='BNI-Message' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            Hasil: &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                            Permintaan anda sedang diproses. Silakan menuju menu  untuk pengambilan file. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;                        ' check:innerText='Hasil: Permintaan anda sedang diproses. Silakan menuju menu Unduh Laporan untuk pengambilan file.' /&gt;" Guid="f27ad901-52fe-4876-8448-e68ca4af74ff" ImageBase64="" InformativeScreenshot="2f3016016e5ea68ea43c4658297b7f7c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='BNIDirect Id Pengguna : ROBOT' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
